@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  deploy/docker/maven-settings.xml ：容器构建用的 Maven 镜像源（E-14）。
+  只在 agt_backend/Dockerfile 里使用（-s 参数），不影响本机 IDEA 内置 Maven。
+  注意：XML 注释内部不允许出现双连字符，注释别写嵌套标记（构建时踩过两次）。
+-->
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
+  <mirrors>
+    <mirror>
+      <id>aliyun</id>
+      <name>Aliyun Maven Mirror</name>
+      <url>https://maven.aliyun.com/repository/public</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+  </mirrors>
+</settings>

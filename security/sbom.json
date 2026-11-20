@@ -1,0 +1,790 @@
+{
+  "generatedAt": "2026-09-24T16:16:03+08:00",
+  "version": "1.0.0",
+  "expectedEnds": {
+    "python": "agt_python/requirements.txt",
+    "java": "agt_backend/target/agt_backend.jar（Spring Boot fat jar 的 BOOT-INF/lib）",
+    "npm": "agt_web/package-lock.json（dev != true 的运行期闭包）"
+  },
+  "ends": {
+    "python": {
+      "source": "agt_python/requirements.txt",
+      "direct": [
+        "fastapi",
+        "httpx",
+        "pydantic",
+        "pydantic-settings",
+        "pymilvus",
+        "pytest",
+        "python-dotenv",
+        "pyyaml",
+        "uvicorn"
+      ],
+      "packages": [
+        {
+          "ecosystem": "PyPI",
+          "name": "annotated-doc",
+          "version": "0.0.4"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "annotated-types",
+          "version": "0.8.0"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "anyio",
+          "version": "4.14.2"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "cachetools",
+          "version": "7.1.8"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "certifi",
+          "version": "2026.7.22"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "charset-normalizer",
+          "version": "3.4.9"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "click",
+          "version": "8.4.2"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "colorama",
+          "version": "0.4.6"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "fastapi",
+          "version": "0.140.13"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "grpcio",
+          "version": "1.84.0"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "h11",
+          "version": "0.16.0"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "httpcore",
+          "version": "1.0.9"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "httptools",
+          "version": "0.8.0"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "httpx",
+          "version": "0.28.1"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "idna",
+          "version": "3.18"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "iniconfig",
+          "version": "2.3.0"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "numpy",
+          "version": "2.4.6"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "orjson",
+          "version": "3.12.0"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "packaging",
+          "version": "26.2"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "pandas",
+          "version": "3.0.5"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "pluggy",
+          "version": "1.6.0"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "protobuf",
+          "version": "7.36.1"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "pydantic",
+          "version": "2.13.4"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "pydantic-core",
+          "version": "2.46.4"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "pydantic-settings",
+          "version": "2.15.0"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "pygments",
+          "version": "2.20.0"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "pymilvus",
+          "version": "3.0.1"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "pytest",
+          "version": "9.1.1"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "python-dateutil",
+          "version": "2.9.0.post0"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "python-dotenv",
+          "version": "1.2.2"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "pyyaml",
+          "version": "6.0.3"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "requests",
+          "version": "2.34.2"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "six",
+          "version": "1.17.0"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "starlette",
+          "version": "1.3.1"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "typing-extensions",
+          "version": "4.16.0"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "typing-inspection",
+          "version": "0.4.2"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "tzdata",
+          "version": "2026.3"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "urllib3",
+          "version": "2.7.0"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "uvicorn",
+          "version": "0.52.0"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "watchfiles",
+          "version": "1.2.0"
+        },
+        {
+          "ecosystem": "PyPI",
+          "name": "websockets",
+          "version": "17.1"
+        }
+      ],
+      "unresolved": [
+        {
+          "name": "exceptiongroup",
+          "reason": "当前环境未安装（环境标记不成立：平台/解释器版本，或可选 extra 未启用）"
+        },
+        {
+          "name": "tomli",
+          "reason": "当前环境未安装（环境标记不成立：平台/解释器版本，或可选 extra 未启用）"
+        },
+        {
+          "name": "uvloop",
+          "reason": "当前环境未安装（环境标记不成立：平台/解释器版本，或可选 extra 未启用）"
+        }
+      ],
+      "problems": []
+    },
+    "java": {
+      "source": "agt_backend/target/agt_backend.jar（Spring Boot fat jar 的 BOOT-INF/lib）",
+      "jar": "agt_backend\\target\\agt_backend.jar",
+      "jarSha256": "71c1b12aaf05950054f73298b7633f5285eea1388f302e02485e5a21336c4655",
+      "pomSha256": "fb8459ff18945e60c825182c6771c6690db9a73d97570efa195a2e7e81fda21a",
+      "packages": [
+        {
+          "ecosystem": "Maven",
+          "name": "com.fasterxml:classmate",
+          "version": "1.7.0"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.apache.commons:commons-lang3",
+          "version": "3.14.0"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.hibernate.validator:hibernate-validator",
+          "version": "8.0.1.Final"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "com.fasterxml.jackson.core:jackson-annotations",
+          "version": "2.17.2"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "com.fasterxml.jackson.core:jackson-core",
+          "version": "2.17.2"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "version": "2.17.2"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml",
+          "version": "2.17.2"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "com.fasterxml.jackson.datatype:jackson-datatype-jdk8",
+          "version": "2.17.2"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "com.fasterxml.jackson.datatype:jackson-datatype-jsr310",
+          "version": "2.17.2"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "com.fasterxml.jackson.module:jackson-module-parameter-names",
+          "version": "2.17.2"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "jakarta.activation:jakarta.activation-api",
+          "version": "2.1.3"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "jakarta.annotation:jakarta.annotation-api",
+          "version": "2.1.1"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "jakarta.validation:jakarta.validation-api",
+          "version": "3.0.2"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "jakarta.xml.bind:jakarta.xml.bind-api",
+          "version": "4.0.2"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.jboss.logging:jboss-logging",
+          "version": "3.5.3.Final"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.slf4j:jul-to-slf4j",
+          "version": "2.0.16"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "com.github.xiaoymin:knife4j-core",
+          "version": "4.4.0"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "com.github.xiaoymin:knife4j-openapi3-jakarta-spring-boot-starter",
+          "version": "4.4.0"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "com.github.xiaoymin:knife4j-openapi3-ui",
+          "version": "4.4.0"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.apache.logging.log4j:log4j-api",
+          "version": "2.23.1"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.apache.logging.log4j:log4j-to-slf4j",
+          "version": "2.23.1"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "ch.qos.logback:logback-classic",
+          "version": "1.5.7"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "ch.qos.logback:logback-core",
+          "version": "1.5.7"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "io.micrometer:micrometer-commons",
+          "version": "1.13.3"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "io.micrometer:micrometer-observation",
+          "version": "1.13.3"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.slf4j:slf4j-api",
+          "version": "2.0.16"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.yaml:snakeyaml",
+          "version": "2.2"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.springframework:spring-aop",
+          "version": "6.1.12"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.springframework:spring-beans",
+          "version": "6.1.12"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.springframework.boot:spring-boot",
+          "version": "3.3.3"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.springframework.boot:spring-boot-autoconfigure",
+          "version": "3.3.3"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.springframework:spring-context",
+          "version": "6.1.12"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.springframework:spring-core",
+          "version": "6.1.12"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.springframework:spring-expression",
+          "version": "6.1.12"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.springframework:spring-jcl",
+          "version": "6.1.12"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.springframework:spring-web",
+          "version": "6.1.12"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.springframework:spring-webmvc",
+          "version": "6.1.12"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.springdoc:springdoc-openapi-starter-common",
+          "version": "2.3.0"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.springdoc:springdoc-openapi-starter-webmvc-api",
+          "version": "2.3.0"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.springdoc:springdoc-openapi-starter-webmvc-ui",
+          "version": "2.3.0"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "io.swagger.core.v3:swagger-annotations-jakarta",
+          "version": "2.2.19"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "io.swagger.core.v3:swagger-core-jakarta",
+          "version": "2.2.19"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "io.swagger.core.v3:swagger-models-jakarta",
+          "version": "2.2.19"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.webjars:swagger-ui",
+          "version": "5.10.3"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.apache.tomcat.embed:tomcat-embed-core",
+          "version": "10.1.60"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.apache.tomcat.embed:tomcat-embed-el",
+          "version": "10.1.60"
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.apache.tomcat.embed:tomcat-embed-websocket",
+          "version": "10.1.60"
+        }
+      ],
+      "unresolved": [
+        {
+          "name": "spring-boot-jarmode-tools-3.3.3.jar",
+          "reason": "本地 .m2 中未找到该 jar，无法确定 groupId（OSV 的 Maven 生态要求 groupId:artifactId）",
+          "guess": "spring-boot-jarmode-tools@3.3.3"
+        }
+      ],
+      "problems": []
+    },
+    "npm": {
+      "source": "agt_web/package-lock.json（dev != true 的运行期闭包）",
+      "packages": [
+        {
+          "ecosystem": "npm",
+          "name": "@babel/helper-string-parser",
+          "version": "7.29.7"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "@babel/helper-validator-identifier",
+          "version": "7.29.7"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "@babel/parser",
+          "version": "7.29.8"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "@babel/types",
+          "version": "7.29.8"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "@jridgewell/sourcemap-codec",
+          "version": "1.6.0"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "@vue/compiler-core",
+          "version": "3.5.42"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "@vue/compiler-dom",
+          "version": "3.5.42"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "@vue/compiler-sfc",
+          "version": "3.5.42"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "@vue/compiler-ssr",
+          "version": "3.5.42"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "@vue/devtools-api",
+          "version": "6.6.4"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "@vue/reactivity",
+          "version": "3.5.42"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "@vue/runtime-core",
+          "version": "3.5.42"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "@vue/runtime-dom",
+          "version": "3.5.42"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "@vue/server-renderer",
+          "version": "3.5.42"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "@vue/shared",
+          "version": "3.5.42"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "agent-base",
+          "version": "6.0.2"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "asynckit",
+          "version": "0.4.0"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "axios",
+          "version": "1.20.0"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "call-bind-apply-helpers",
+          "version": "1.0.2"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "combined-stream",
+          "version": "1.0.8"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "core-js",
+          "version": "3.50.0"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "csstype",
+          "version": "3.2.3"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "debug",
+          "version": "4.4.3"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "delayed-stream",
+          "version": "1.0.0"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "dompurify",
+          "version": "3.4.15"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "dunder-proto",
+          "version": "1.0.1"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "entities",
+          "version": "7.0.1"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "es-define-property",
+          "version": "1.0.1"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "es-errors",
+          "version": "1.3.0"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "es-object-atoms",
+          "version": "1.1.2"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "es-set-tostringtag",
+          "version": "2.1.0"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "estree-walker",
+          "version": "2.0.2"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "follow-redirects",
+          "version": "1.16.0"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "form-data",
+          "version": "4.0.6"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "function-bind",
+          "version": "1.1.2"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "get-intrinsic",
+          "version": "1.3.0"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "get-proto",
+          "version": "1.0.1"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "gopd",
+          "version": "1.2.0"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "has-symbols",
+          "version": "1.1.0"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "has-tostringtag",
+          "version": "1.0.2"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "hasown",
+          "version": "2.0.4"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "highlight.js",
+          "version": "11.12.0"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "https-proxy-agent",
+          "version": "5.0.1"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "magic-string",
+          "version": "0.30.21"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "marked",
+          "version": "18.0.13"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "math-intrinsics",
+          "version": "1.1.0"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "mime-types",
+          "version": "2.1.35"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "mime-db",
+          "version": "1.52.0"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "ms",
+          "version": "2.1.3"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "nanoid",
+          "version": "3.3.19"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "picocolors",
+          "version": "1.1.1"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "postcss",
+          "version": "8.5.28"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "proxy-from-env",
+          "version": "2.1.0"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "source-map-js",
+          "version": "1.2.1"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "vue",
+          "version": "3.5.42"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "vue-router",
+          "version": "4.6.4"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "vuex",
+          "version": "4.1.0"
+        }
+      ],
+      "unresolved": [],
+      "problems": []
+    }
+  }
+}

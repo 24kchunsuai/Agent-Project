@@ -1,0 +1,107 @@
+# ============================================================
+# drone-agent001 —— 三端统一仓库忽略规则
+# 前端 agt_web (Node/Vue) | 后端 agt_backend (Java/Maven) | agent 端 agt_python (Python)
+# ============================================================
+
+### Java / Maven ###
+target/
+HELP.md
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### Node / Vue ###
+node_modules/
+dist/
+.npm/
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
+*.local
+
+### Python ###
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+.env
+.env.local
+
+### 构建产物 ###
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+out/
+
+### IDE ###
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+### 日志与系统临时文件 ###
+*.log
+logs/
+### 本地 CI 门禁的作业日志（scripts/ci.sh，E-4）###
+deploy/ci-logs/
+Thumbs.db
+desktop.ini
+.DS_Store
+
+### Milvus 数据卷（本地运行数据，禁止提交）###
+deploy/milvus/volumes/
+
+### 第三方语料（源仓库无 License，仅本地学习使用，禁止再分发）###
+agt_python/data/kb/external/
+
+### 用户上传的知识库文档（运行期数据，随知识库删除同步清理，不入版本库）###
+### 注意：raw/ 下的初始语料仍受版本管理，这里只忽略 uploads/ 子目录
+agt_python/data/kb/raw/uploads/
+
+### 回收站（软删除备份，运行时数据）###
+agt_python/data/kb/recycle/
+
+### 治理元数据库（SQLite 单文件，运行时数据）###
+agt_python/data/governance/
+
+### 会话记忆库 / 用户画像库（SQLite，运行时数据，E-7 补齐）###
+### ⚠️ 这两个库里是**用户对话原文与用户画像**——入库不只是"仓库变大"，
+### 而是把用户数据带进版本历史（清不掉）。与 data/governance/ 同一类，必须忽略。
+agt_python/data/memory/
+
+### 数据中台埋点库（SQLite + 降级计数器，运行时数据，E-7 补齐）###
+agt_python/data/metrics/
+
+### 数据备份快照（E-7：每天一份、保留 14 份，单份可达 MB 级）###
+### 备份是**运行时状态**，且随库增长会变得很大；入库只会制造无法清理的二进制历史。
+### 要交付备份请走"拷贝 data/backups/ 到另一块盘/另一台机"（见 docs/运维手册.md §4.2）。
+agt_python/data/backups/
+
+### 本机密钥（服务间共享密钥等，绝不入库）###
+### 见 docs/specs/生产级改进规约.md S-1：Java(+8080) 用 AGENT_SHARED_KEY 调 Python(+8000)
+### 生成：python -c "import secrets; print(secrets.token_urlsafe(32))"
+deploy/secrets/
+
+### 版本打戳产物（由 scripts/stamp_version.py 生成，E-1）###
+### 刻意不入库：buildTime / gitCommit 每次构建都不同，入库只会制造无意义 diff。
+### 代价是 fresh clone / 交付包必须先打戳才有版本信息——
+### 发布流程（scripts/release.sh）已强制先打戳再打包。
+agt_python/app/build_info.json
+agt_backend/src/main/resources/build-info.properties
+agt_web/public/version.json
+
+### 发布归档（dist/<version>/，E-1）###
+dist/

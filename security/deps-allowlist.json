@@ -1,0 +1,4 @@
+{
+  "note": "豁免台账：每条必须有 id/package/reason/disposition/owner/expiresAt，缺一项或已过期则扫描判红",
+  "entries": []
+}

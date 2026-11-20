@@ -1,0 +1,24 @@
+# 已验证通过的依赖版本组合 —— 生成于 2026-09-24T09:57:31+08:00
+# 对应 VERSION=1.0.0
+#
+# 用途与边界（重要，请先读）
+# --------------------------
+# 这是 `pip freeze` 与本目录 requirements.txt 求交集的结果：**只含直接依赖**，
+# 不含传递依赖，也不含 hash。因此它是"当前这套环境验证通过的版本指纹"，
+# **不是**能严格重建依赖树的锁文件——把它当成 lock 用是不安全的。
+#
+# 用途：① 部署时对照，判断环境是否漂移；② 事后追溯"当时用的哪个版本"。
+# 严格可复现需引入 pip-tools / uv 生成含 hash 的完整锁（属后续任务，
+# 见 docs/交付物清单.md §7）。
+#
+# 安装：pip install -r requirements.txt          # 按声明（下限约束）
+#       如需与此处完全一致：pip install fastapi==0.140.13 uvicorn==0.52.0 pydantic==2.13.4 pydantic-settings==2.15.0 python-dotenv==1.2.2 pytest==9.1.1 httpx==0.28.1 PyYAML==6.0.3 pymilvus==3.0.1
+fastapi==0.140.13
+uvicorn==0.52.0
+pydantic==2.13.4
+pydantic-settings==2.15.0
+python-dotenv==1.2.2
+pytest==9.1.1
+httpx==0.28.1
+PyYAML==6.0.3
+pymilvus==3.0.1

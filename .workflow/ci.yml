@@ -1,0 +1,80 @@
+# ==============================================================================
+# Gitee Go 流水线：CI 门禁（企业级落地规约 E-4）
+#
+# 仓库托管在 Gitee（https://gitee.com/IS24Kchunshuai/drone-agent001），
+# 所以主力 CI 是 Gitee Go，不是 GitHub Actions。
+#
+# ⚠️ 重要：**push 本文件不会自动创建流水线**。
+#    Gitee Go 的流水线对象必须在网页端建立：
+#      仓库页 → DevOps → Gitee Go → 新建流水线 → 代码视图（粘贴/选择本文件）
+#    建立并保存后，之后的 push 才会按 triggers 自动触发。
+#    详见 docs/部署手册.md §9（CI 门禁）。
+#
+# 与本地门禁同口径：同一份 agt_python/pytest.ini、同一个 mvn test、同一个 npm run build。
+# 本地等价物：bash scripts/ci.sh（可离线跑、可故意改坏验红）
+# ==============================================================================
+version: '1.0'
+name: drone-agent-ci
+displayName: CI-门禁
+triggers:
+  trigger: auto
+  push:
+    branches:
+      # 精确匹配 master：本仓库主线是 master（见 VERSION / stamp_version.py 的 git 语义）
+      precise:
+        - master
+
+stages:
+  # ---------------------------------------------------------------- Python 单测
+  # 已知 4 项失败基线不在这里"忽略"，而是写在 agt_python/pytest.ini 的 --deselect 里，
+  # 本地与 CI 共用同一份口径。
+  - stage:
+      name: python-test
+      displayName: Python-单测
+      strategy: naturally
+      trigger: auto
+      steps:
+        - step: build@python
+          name: pytest
+          displayName: pytest
+          pythonVersion: '3.11'
+          commands:
+            - python -V
+            - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r agt_python/requirements.txt
+            - cd agt_python && python -m pytest
+
+  # ---------------------------------------------------------------- Java 单测
+  # 这是 E-5 的产出：71 项测试（鉴权组 / 透传契约组 / 响应体组），不依赖外部服务。
+  - stage:
+      name: java-test
+      displayName: Java-单测
+      strategy: naturally
+      trigger: auto
+      steps:
+        - step: build@maven
+          name: mvn-test
+          displayName: mvn test
+          jdkVersion: 17
+          mavenVersion: 3.6.3
+          commands:
+            - java -version
+            - mvn -v
+            - cd agt_backend && mvn -B -T 1C test
+
+  # ---------------------------------------------------------------- 前端构建
+  # 前端只有构建门禁（无单测）：它坏起来最典型的表现就是"编译不过"，
+  # 而 vue-cli 的编译既查语法也查模板，性价比最高。
+  - stage:
+      name: web-build
+      displayName: 前端-构建
+      strategy: naturally
+      trigger: auto
+      steps:
+        - step: build@nodejs
+          name: npm-build
+          displayName: npm ci && npm run build
+          nodeVersion: '20'
+          commands:
+            - node -v
+            - npm -v
+            - cd agt_web && npm ci && npm run build

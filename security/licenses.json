@@ -1,0 +1,585 @@
+{
+  "generatedAt": "2026-09-24T16:18:33+08:00",
+  "licenses": {
+    "PyPI:annotated-doc@0.0.4": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:annotated-types@0.8.0": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:anyio@4.14.2": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:cachetools@7.1.8": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:certifi@2026.7.22": {
+      "license": "MPL-2.0",
+      "source": "pypi.org"
+    },
+    "PyPI:charset-normalizer@3.4.9": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:click@8.4.2": {
+      "license": "BSD-3-Clause",
+      "source": "pypi.org"
+    },
+    "PyPI:colorama@0.4.6": {
+      "license": "BSD License",
+      "source": "pypi.org"
+    },
+    "PyPI:fastapi@0.140.13": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:grpcio@1.84.0": {
+      "license": "Apache-2.0",
+      "source": "pypi.org"
+    },
+    "PyPI:h11@0.16.0": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:httpcore@1.0.9": {
+      "license": "BSD-3-Clause",
+      "source": "pypi.org"
+    },
+    "PyPI:httptools@0.8.0": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:httpx@0.28.1": {
+      "license": "BSD-3-Clause",
+      "source": "pypi.org"
+    },
+    "PyPI:idna@3.18": {
+      "license": "BSD-3-Clause",
+      "source": "pypi.org"
+    },
+    "PyPI:iniconfig@2.3.0": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:numpy@2.4.6": {
+      "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+      "source": "pypi.org"
+    },
+    "PyPI:orjson@3.12.0": {
+      "license": "MPL-2.0 AND (Apache-2.0 OR MIT)",
+      "source": "pypi.org"
+    },
+    "PyPI:packaging@26.2": {
+      "license": "Apache-2.0 OR BSD-2-Clause",
+      "source": "pypi.org"
+    },
+    "PyPI:pandas@3.0.5": {
+      "license": "BSD License",
+      "source": "pypi.org"
+    },
+    "PyPI:pluggy@1.6.0": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:protobuf@7.36.1": {
+      "license": "3-Clause BSD License",
+      "source": "pypi.org"
+    },
+    "PyPI:pydantic@2.13.4": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:pydantic-core@2.46.4": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:pydantic-settings@2.15.0": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:pygments@2.20.0": {
+      "license": "BSD-2-Clause",
+      "source": "pypi.org"
+    },
+    "PyPI:pymilvus@3.0.1": {
+      "license": "Apache Software License",
+      "source": "pypi.org"
+    },
+    "PyPI:pytest@9.1.1": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:python-dateutil@2.9.0.post0": {
+      "license": "Dual License",
+      "source": "pypi.org"
+    },
+    "PyPI:python-dotenv@1.2.2": {
+      "license": "BSD-3-Clause",
+      "source": "pypi.org"
+    },
+    "PyPI:pyyaml@6.0.3": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:requests@2.34.2": {
+      "license": "Apache-2.0",
+      "source": "pypi.org"
+    },
+    "PyPI:six@1.17.0": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:starlette@1.3.1": {
+      "license": "BSD-3-Clause",
+      "source": "pypi.org"
+    },
+    "PyPI:typing-extensions@4.16.0": {
+      "license": "PSF-2.0",
+      "source": "pypi.org"
+    },
+    "PyPI:typing-inspection@0.4.2": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:tzdata@2026.3": {
+      "license": "Apache-2.0",
+      "source": "pypi.org"
+    },
+    "PyPI:urllib3@2.7.0": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:uvicorn@0.52.0": {
+      "license": "BSD-3-Clause",
+      "source": "pypi.org"
+    },
+    "PyPI:watchfiles@1.2.0": {
+      "license": "MIT",
+      "source": "pypi.org"
+    },
+    "PyPI:websockets@17.1": {
+      "license": "BSD-3-Clause",
+      "source": "pypi.org"
+    },
+    "Maven:com.fasterxml:classmate@1.7.0": {
+      "license": "Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.apache.commons:commons-lang3@3.14.0": {
+      "license": "Apache-2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.hibernate.validator:hibernate-validator@8.0.1.Final": {
+      "license": "Apache License 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:com.fasterxml.jackson.core:jackson-annotations@2.17.2": {
+      "license": "The Apache Software License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:com.fasterxml.jackson.core:jackson-core@2.17.2": {
+      "license": "The Apache Software License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:com.fasterxml.jackson.core:jackson-databind@2.17.2": {
+      "license": "The Apache Software License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:com.fasterxml.jackson.dataformat:jackson-dataformat-yaml@2.17.2": {
+      "license": "The Apache Software License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:com.fasterxml.jackson.datatype:jackson-datatype-jdk8@2.17.2": {
+      "license": "The Apache Software License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:com.fasterxml.jackson.datatype:jackson-datatype-jsr310@2.17.2": {
+      "license": "The Apache Software License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:com.fasterxml.jackson.module:jackson-module-parameter-names@2.17.2": {
+      "license": "The Apache Software License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:jakarta.activation:jakarta.activation-api@2.1.3": {
+      "license": "EDL 1.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:jakarta.annotation:jakarta.annotation-api@2.1.1": {
+      "license": "EPL 2.0 / GPL2 w/ CPE",
+      "source": "local .m2 POM"
+    },
+    "Maven:jakarta.validation:jakarta.validation-api@3.0.2": {
+      "license": "Apache License 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:jakarta.xml.bind:jakarta.xml.bind-api@4.0.2": {
+      "license": "UNKNOWN",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.jboss.logging:jboss-logging@3.5.3.Final": {
+      "license": "Apache License 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.slf4j:jul-to-slf4j@2.0.16": {
+      "license": "MIT License",
+      "source": "local .m2 POM"
+    },
+    "Maven:com.github.xiaoymin:knife4j-core@4.4.0": {
+      "license": "The Apache Software License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:com.github.xiaoymin:knife4j-openapi3-jakarta-spring-boot-starter@4.4.0": {
+      "license": "The Apache Software License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:com.github.xiaoymin:knife4j-openapi3-ui@4.4.0": {
+      "license": "The Apache Software License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.apache.logging.log4j:log4j-api@2.23.1": {
+      "license": "Apache-2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.apache.logging.log4j:log4j-to-slf4j@2.23.1": {
+      "license": "Apache-2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:ch.qos.logback:logback-classic@1.5.7": {
+      "license": "Eclipse Public License - v 1.0 / GNU Lesser General Public License",
+      "source": "local .m2 POM"
+    },
+    "Maven:ch.qos.logback:logback-core@1.5.7": {
+      "license": "Eclipse Public License - v 1.0 / GNU Lesser General Public License",
+      "source": "local .m2 POM"
+    },
+    "Maven:io.micrometer:micrometer-commons@1.13.3": {
+      "license": "The Apache Software License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:io.micrometer:micrometer-observation@1.13.3": {
+      "license": "The Apache Software License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.slf4j:slf4j-api@2.0.16": {
+      "license": "MIT License",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.yaml:snakeyaml@2.2": {
+      "license": "Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.springframework:spring-aop@6.1.12": {
+      "license": "Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.springframework:spring-beans@6.1.12": {
+      "license": "Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.springframework.boot:spring-boot@3.3.3": {
+      "license": "Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.springframework.boot:spring-boot-autoconfigure@3.3.3": {
+      "license": "Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.springframework:spring-context@6.1.12": {
+      "license": "Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.springframework:spring-core@6.1.12": {
+      "license": "Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.springframework:spring-expression@6.1.12": {
+      "license": "Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.springframework:spring-jcl@6.1.12": {
+      "license": "Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.springframework:spring-web@6.1.12": {
+      "license": "Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.springframework:spring-webmvc@6.1.12": {
+      "license": "Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.springdoc:springdoc-openapi-starter-common@2.3.0": {
+      "license": "The Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.springdoc:springdoc-openapi-starter-webmvc-api@2.3.0": {
+      "license": "The Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.springdoc:springdoc-openapi-starter-webmvc-ui@2.3.0": {
+      "license": "The Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:io.swagger.core.v3:swagger-annotations-jakarta@2.2.19": {
+      "license": "Apache License 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:io.swagger.core.v3:swagger-core-jakarta@2.2.19": {
+      "license": "Apache License 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:io.swagger.core.v3:swagger-models-jakarta@2.2.19": {
+      "license": "Apache License 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.webjars:swagger-ui@5.10.3": {
+      "license": "Apache 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.apache.tomcat.embed:tomcat-embed-core@10.1.60": {
+      "license": "Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.apache.tomcat.embed:tomcat-embed-el@10.1.60": {
+      "license": "Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "Maven:org.apache.tomcat.embed:tomcat-embed-websocket@10.1.60": {
+      "license": "Apache License, Version 2.0",
+      "source": "local .m2 POM"
+    },
+    "npm:@babel/helper-string-parser@7.29.7": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:@babel/helper-validator-identifier@7.29.7": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:@babel/parser@7.29.8": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:@babel/types@7.29.8": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:@jridgewell/sourcemap-codec@1.6.0": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:@vue/compiler-core@3.5.42": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:@vue/compiler-dom@3.5.42": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:@vue/compiler-sfc@3.5.42": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:@vue/compiler-ssr@3.5.42": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:@vue/devtools-api@6.6.4": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:@vue/reactivity@3.5.42": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:@vue/runtime-core@3.5.42": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:@vue/runtime-dom@3.5.42": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:@vue/server-renderer@3.5.42": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:@vue/shared@3.5.42": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:agent-base@6.0.2": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:asynckit@0.4.0": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:axios@1.20.0": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:call-bind-apply-helpers@1.0.2": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:combined-stream@1.0.8": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:core-js@3.50.0": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:csstype@3.2.3": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:debug@4.4.3": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:delayed-stream@1.0.0": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:dompurify@3.4.15": {
+      "license": "(MPL-2.0 OR Apache-2.0)",
+      "source": "registry.npmjs.org"
+    },
+    "npm:dunder-proto@1.0.1": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:entities@7.0.1": {
+      "license": "BSD-2-Clause",
+      "source": "registry.npmjs.org"
+    },
+    "npm:es-define-property@1.0.1": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:es-errors@1.3.0": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:es-object-atoms@1.1.2": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:es-set-tostringtag@2.1.0": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:estree-walker@2.0.2": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:follow-redirects@1.16.0": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:form-data@4.0.6": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:function-bind@1.1.2": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:get-intrinsic@1.3.0": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:get-proto@1.0.1": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:gopd@1.2.0": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:has-symbols@1.1.0": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:has-tostringtag@1.0.2": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:hasown@2.0.4": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:highlight.js@11.12.0": {
+      "license": "BSD-3-Clause",
+      "source": "registry.npmjs.org"
+    },
+    "npm:https-proxy-agent@5.0.1": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:magic-string@0.30.21": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:marked@18.0.13": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:math-intrinsics@1.1.0": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:mime-types@2.1.35": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:mime-db@1.52.0": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:ms@2.1.3": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:nanoid@3.3.19": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:picocolors@1.1.1": {
+      "license": "ISC",
+      "source": "registry.npmjs.org"
+    },
+    "npm:postcss@8.5.28": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:proxy-from-env@2.1.0": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:source-map-js@1.2.1": {
+      "license": "BSD-3-Clause",
+      "source": "registry.npmjs.org"
+    },
+    "npm:vue@3.5.42": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:vue-router@4.6.4": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    },
+    "npm:vuex@4.1.0": {
+      "license": "MIT",
+      "source": "registry.npmjs.org"
+    }
+  }
+}

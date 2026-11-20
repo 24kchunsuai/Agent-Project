@@ -1,0 +1,127 @@
+{
+  "domain": "drone",
+  "tools": [
+    {
+      "name": "drone_query",
+      "description": "查询无人机设备列表，可按关键字/状态过滤。回答'有哪些设备''某设备什么状态''在维修的设备'等",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "keyword": {
+            "type": "string",
+            "description": "设备编号/名称关键字，可选"
+          },
+          "status": {
+            "type": "string",
+            "description": "设备状态过滤，可选，如 0=空闲 1=占用 2=维修（以系统实际枚举为准，不确定就不过滤）"
+          },
+          "pageNum": {
+            "type": "integer",
+            "description": "页码，可选（默认返回全部）"
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "每页条数，可选，上限 100"
+          }
+        },
+        "required": []
+      },
+      "danger": false
+    },
+    {
+      "name": "drone_detail",
+      "description": "查询无人机设备详情（比列表更全：位置、维保信息等）。需要设备 ID（先用 drone_query 查列表拿 id）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "droneId": {
+            "type": "integer",
+            "description": "设备 ID，必填"
+          }
+        },
+        "required": [
+          "droneId"
+        ]
+      },
+      "danger": false
+    },
+    {
+      "name": "drone_save",
+      "description": "新增或更新无人机设备（不传 id 为新增）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "设备编码，必填（更新时用已有编码）"
+          },
+          "name": {
+            "type": "string",
+            "description": "设备名称，必填"
+          },
+          "model": {
+            "type": "string",
+            "description": "型号，可选"
+          },
+          "type": {
+            "type": "string",
+            "description": "类型，可选"
+          },
+          "location": {
+            "type": "string",
+            "description": "所在位置，可选"
+          }
+        },
+        "required": [
+          "code",
+          "name"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "drone_delete",
+      "description": "删除无人机设备（不可恢复）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "droneId": {
+            "type": "integer",
+            "description": "设备 ID，必填"
+          }
+        },
+        "required": [
+          "droneId"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "drone_maintenance",
+      "description": "设置设备维保状态（送修/恢复等）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "droneId": {
+            "type": "integer",
+            "description": "设备 ID，必填"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "0",
+              "1",
+              "2"
+            ],
+            "description": "目标状态：0=空闲，1=占用，2=维修"
+          }
+        },
+        "required": [
+          "droneId",
+          "status"
+        ]
+      },
+      "danger": true
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "domain": "media",
+  "tools": [
+    {
+      "name": "media_query",
+      "description": "查询飞行采集的媒体文件（照片/视频），可按任务/类型过滤，或按任务分组。回答'有什么影像资料''某任务的媒体文件'等",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "taskId": {
+            "type": "integer",
+            "description": "按任务 ID 过滤，可选"
+          },
+          "fileType": {
+            "type": "string",
+            "description": "文件类型过滤，可选，如 image/video（不确定就不过滤）"
+          },
+          "grouped": {
+            "type": "boolean",
+            "description": "true=按任务分组返回概览，默认 false 返回文件列表"
+          },
+          "pageNum": {
+            "type": "integer",
+            "description": "页码，可选（默认返回全部）"
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "每页条数，可选，上限 100"
+          }
+        },
+        "required": []
+      },
+      "danger": false
+    },
+    {
+      "name": "media_delete",
+      "description": "删除媒体文件（不可恢复）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "mediaId": {
+            "type": "integer",
+            "description": "媒体 ID，必填"
+          }
+        },
+        "required": [
+          "mediaId"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "media_upload",
+      "description": "上传任务成果媒体文件（照片/视频）到指定任务。paths 为上传暂存目录内的文件名列表（P2 前端文件选择联动前的过渡方案）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "taskId": {
+            "type": "integer",
+            "description": "任务 ID，必填"
+          },
+          "paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "暂存目录内的文件名列表，至少一个，如 ['D005巡检.jpg']"
+          },
+          "description": {
+            "type": "string",
+            "description": "成果说明，可选"
+          }
+        },
+        "required": [
+          "taskId",
+          "paths"
+        ]
+      },
+      "danger": true
+    }
+  ]
+}

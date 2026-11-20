@@ -1,0 +1,291 @@
+{
+  "collection": "kb_drone",
+  "chunk_config": {
+    "max_chars": 400,
+    "overlap": 80,
+    "min_chunk": 100
+  },
+  "corpus": {
+    "docs": 78,
+    "chunks": 2010
+  },
+  "baseline": {
+    "n_eval": 41,
+    "n_labeled": 38,
+    "n_hit_any": 38,
+    "top1": 0.5,
+    "top3": 0.6578947368421053,
+    "top5": 0.8421052631578947,
+    "top8": 0.9473684210526315,
+    "mean_top1_score": 0.9152050782975397,
+    "mean_ctx_top5_chars": 1446.1315789473683,
+    "details": [
+      {
+        "qid": "eval-001",
+        "question": "微型无人机的重量上限是多少？",
+        "hit_level": "high",
+        "hit_rank": 4,
+        "top1_score": 0.9996429681777954
+      },
+      {
+        "qid": "eval-002",
+        "question": "无人机实名登记在哪个平台办理？网址是什么？",
+        "hit_level": "high",
+        "hit_rank": 9,
+        "top1_score": 0.9988304972648621
+      },
+      {
+        "qid": "eval-003",
+        "question": "哪些类型的无人机需要操控员执照？",
+        "hit_level": "high",
+        "hit_rank": 1,
+        "top1_score": 0.9996849298477173
+      },
+      {
+        "qid": "eval-004",
+        "question": "真高多少米以下是适飞空域？",
+        "hit_level": "high",
+        "hit_rank": 1,
+        "top1_score": 0.9995417594909668
+      },
+      {
+        "qid": "eval-005",
+        "question": "飞行活动申请最晚要在什么时候提交？",
+        "hit_level": "high",
+        "hit_rank": 1,
+        "top1_score": 0.9990890026092529
+      },
+      {
+        "qid": "eval-006",
+        "question": "哪些情况必须投保责任保险？",
+        "hit_level": "high",
+        "hit_rank": 1,
+        "top1_score": 0.997368335723877
+      },
+      {
+        "qid": "eval-007",
+        "question": "DJI Mini 3 的起飞重量和最长飞行时间是多少？",
+        "hit_level": "high",
+        "hit_rank": 1,
+        "top1_score": 0.9997965693473816
+      },
+      {
+        "qid": "eval-008",
+        "question": "drone-agent001 项目分了哪几层？各自的端口是多少？",
+        "hit_level": "high",
+        "hit_rank": 1,
+        "top1_score": 0.9996849298477173
+      },
+      {
+        "qid": "eval-009",
+        "question": "我买的小飞机不到半斤，还用考证吗？",
+        "hit_level": "high",
+        "hit_rank": 1,
+        "top1_score": 0.9902915358543396
+      },
+      {
+        "qid": "eval-010",
+        "question": "飞机上要不要贴二维码？",
+        "hit_level": "high",
+        "hit_rank": 3,
+        "top1_score": 0.9149009585380554
+      },
+      {
+        "qid": "eval-011",
+        "question": "天冷了电池不太行，飞着飞着就掉下来了",
+        "hit_level": "high",
+        "hit_rank": 1,
+        "top1_score": 0.9968273043632507
+      },
+      {
+        "qid": "eval-012",
+        "question": "我的飞机老是无缘无故飘走，怎么办？",
+        "hit_level": "high",
+        "hit_rank": 1,
+        "top1_score": 0.9979493021965027
+      },
+      {
+        "qid": "eval-013",
+        "question": "我怎么知道这个地方能不能飞？",
+        "hit_level": "medium",
+        "hit_rank": 1,
+        "top1_score": 0.9989012479782104
+      },
+      {
+        "qid": "eval-014",
+        "question": "飞到一半遥控器没反应了",
+        "hit_level": "high",
+        "hit_rank": 2,
+        "top1_score": 0.8807970285415649
+      },
+      {
+        "qid": "eval-015",
+        "question": "拍视频画面卡卡的，一卡一卡的",
+        "hit_level": "high",
+        "hit_rank": 1,
+        "top1_score": 0.4073334038257599
+      },
+      {
+        "qid": "eval-016",
+        "question": "电池用久了还能继续用吗",
+        "hit_level": "medium",
+        "hit_rank": 1,
+        "top1_score": 0.562176525592804
+      },
+      {
+        "qid": "eval-017",
+        "question": "250 克的无人机需要执照吗？需要买责任保险吗？",
+        "hit_level": "high",
+        "hit_rank": 5,
+        "top1_score": 0.9984021782875061
+      },
+      {
+        "qid": "eval-018",
+        "question": "DJI Mavic 4 Pro 属于哪一类无人机？飞它需要什么资质？",
+        "hit_level": "high",
+        "hit_rank": 1,
+        "top1_score": 0.9996849298477173
+      },
+      {
+        "qid": "eval-019",
+        "question": "我要做商业航拍，需要准备哪些合规事项？",
+        "hit_level": "medium",
+        "hit_rank": 5,
+        "top1_score": 0.9995121955871582
+      },
+      {
+        "qid": "eval-020",
+        "question": "农用无人机和普通消费级无人机在管理要求上有什么不同？",
+        "hit_level": "medium",
+        "hit_rank": 2,
+        "top1_score": 0.9964063763618469
+      },
+      {
+        "qid": "eval-021",
+        "question": "Mini 3 换上长续航电池后，合规上有什么影响？",
+        "hit_level": "high",
+        "hit_rank": 1,
+        "top1_score": 0.9989012479782104
+      },
+      {
+        "qid": "eval-022",
+        "question": "我想飞 150 米高拍全景，需要提前多久申请？",
+        "hit_level": "high",
+        "hit_rank": 2,
+        "top1_score": 0.9975274205207825
+      },
+      {
+        "qid": "eval-023",
+        "question": "无人机摔坏了，怎么走保险理赔？",
+        "hit_level": "partial",
+        "hit_rank": 3,
+        "top1_score": 0.9919379353523254
+      },
+      {
+        "qid": "eval-024",
+        "question": "考无人机教员执照需要多少钱？要学多久？",
+        "hit_level": "partial",
+        "hit_rank": 4,
+        "top1_score": 0.9241418242454529
+      },
+      {
+        "qid": "eval-025",
+        "question": "DJI M300 RTK 的详细技术参数是什么？",
+        "hit_level": "partial",
+        "hit_rank": 8,
+        "top1_score": 0.970687747001648
+      },
+      {
+        "qid": "eval-026",
+        "question": "无人机做测绘应该怎么选设备？",
+        "hit_level": "partial",
+        "hit_rank": 5,
+        "top1_score": 0.985042929649353
+      },
+      {
+        "qid": "eval-027",
+        "question": "无人机电池可以寄快递吗？",
+        "hit_level": "partial",
+        "hit_rank": 1,
+        "top1_score": 0.8807970285415649
+      },
+      {
+        "qid": "eval-033",
+        "question": "螺旋桨坏了怎么更换？",
+        "hit_level": "medium",
+        "hit_rank": 4,
+        "top1_score": 0.9626730680465698
+      },
+      {
+        "qid": "eval-034",
+        "question": "RTK 是什么原理？",
+        "hit_level": "medium",
+        "hit_rank": 1,
+        "top1_score": 0.9990890026092529
+      },
+      {
+        "qid": "eval-035",
+        "question": "云台画面歪了或者一直抖怎么办？",
+        "hit_level": "medium",
+        "hit_rank": 1,
+        "top1_score": 0.9982993006706238
+      },
+      {
+        "qid": "eval-036",
+        "question": "无人机的噪音大不大？",
+        "hit_level": "medium",
+        "hit_rank": 5,
+        "top1_score": 0.11920292675495148
+      },
+      {
+        "qid": "eval-037",
+        "question": "飞手出门要带哪些装备？",
+        "hit_level": "medium",
+        "hit_rank": 2,
+        "top1_score": 0.6791787147521973
+      },
+      {
+        "qid": "eval-038",
+        "question": "空中的规矩",
+        "hit_level": "medium",
+        "hit_rank": 1,
+        "top1_score": 0.9046505093574524
+      },
+      {
+        "qid": "eval-039",
+        "question": "限高",
+        "hit_level": "medium",
+        "hit_rank": 7,
+        "top1_score": 0.6791787147521973
+      },
+      {
+        "qid": "eval-040",
+        "question": "无人机黑飞会有什么后果？",
+        "hit_level": "medium",
+        "hit_rank": 7,
+        "top1_score": 0.9669140577316284
+      },
+      {
+        "qid": "eval-041",
+        "question": "UOM 和 UAS 有什么区别？",
+        "hit_level": "medium",
+        "hit_rank": 1,
+        "top1_score": 0.9992903470993042
+      },
+      {
+        "qid": "eval-042",
+        "question": "我有一台 248 克的无人机，想在距离机场 3 公里的地方飞到 80 米高拍婚礼，需要办什么手续？",
+        "hit_level": "high",
+        "hit_rank": 7,
+        "top1_score": 0.9890130758285522
+      },
+      {
+        "qid": "eval-049",
+        "question": "起飞流程是什么？",
+        "hit_level": "high",
+        "hit_rank": 9,
+        "top1_score": 0.9944451451301575
+      }
+    ]
+  }
+}

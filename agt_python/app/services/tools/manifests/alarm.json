@@ -1,0 +1,225 @@
+{
+  "domain": "alarm",
+  "tools": [
+    {
+      "name": "alarm_query",
+      "description": "查询告警列表（返回含 id/title/severity/status，处置告警需要这里的 id），可按状态过滤",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "告警状态过滤，可选，如 pending=待处置（不确定就不过滤）"
+          },
+          "severity": {
+            "type": "string",
+            "description": "严重级别过滤，可选（P0/P1/P2/P3）"
+          },
+          "alarmType": {
+            "type": "string",
+            "description": "告警类型过滤，可选"
+          },
+          "keyword": {
+            "type": "string",
+            "description": "关键字（标题等），可选"
+          },
+          "startTime": {
+            "type": "string",
+            "description": "触发时间起点，可选，格式 yyyy-MM-dd HH:mm:ss"
+          },
+          "endTime": {
+            "type": "string",
+            "description": "触发时间终点，可选，格式 yyyy-MM-dd HH:mm:ss"
+          },
+          "onlyDeviceAlarm": {
+            "type": "boolean",
+            "description": "true=只看设备告警，可选"
+          },
+          "pageNum": {
+            "type": "integer",
+            "description": "页码，可选（默认返回全部）"
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "每页条数，可选，上限 100"
+          }
+        },
+        "required": []
+      },
+      "danger": false
+    },
+    {
+      "name": "alarm_detail",
+      "description": "查询告警详情：遥测数据 + 处理时间线。回答'这条告警的来龙去脉''处理到哪一步了'等（需先从 alarm_query 拿 id）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "alarmId": {
+            "type": "integer",
+            "description": "告警 ID，必填"
+          }
+        },
+        "required": [
+          "alarmId"
+        ]
+      },
+      "danger": false
+    },
+    {
+      "name": "alarm_stats",
+      "description": "查询告警分级统计（P0-P3 各级数量）。回答'现在有多少紧急告警''告警分级情况'等",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "danger": false
+    },
+    {
+      "name": "alarm_dashboard",
+      "description": "查询告警看板：趋势曲线 + 设备/飞手告警排行。回答'告警趋势''哪台设备告警最多''哪个飞手告警最多'等（需 admin）",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "danger": false
+    },
+    {
+      "name": "alarm_acknowledge",
+      "description": "确认告警（开始处置）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "alarmId": {
+            "type": "integer",
+            "description": "告警 ID，必填"
+          }
+        },
+        "required": [
+          "alarmId"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "alarm_resolve",
+      "description": "解决告警",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "alarmId": {
+            "type": "integer",
+            "description": "告警 ID，必填"
+          },
+          "note": {
+            "type": "string",
+            "description": "处置说明，可选"
+          }
+        },
+        "required": [
+          "alarmId"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "alarm_ignore",
+      "description": "忽略告警（仅低优先级 P2/P3 可忽略，P0/P1 系统会拒绝）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "alarmId": {
+            "type": "integer",
+            "description": "告警 ID，必填"
+          },
+          "note": {
+            "type": "string",
+            "description": "忽略原因，可选"
+          }
+        },
+        "required": [
+          "alarmId"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "alarm_escalate",
+      "description": "为告警请求支援（升级给管理员处理）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "alarmId": {
+            "type": "integer",
+            "description": "告警 ID，必填"
+          }
+        },
+        "required": [
+          "alarmId"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "rule_query",
+      "description": "查询告警规则列表（阈值/触发条件配置）。回答'有哪些告警规则''告警怎么触发的'等",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "pageNum": {
+            "type": "integer",
+            "description": "页码，默认 1"
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "每页条数，默认 10"
+          }
+        },
+        "required": []
+      },
+      "danger": false
+    },
+    {
+      "name": "rule_update",
+      "description": "更新告警规则（阈值/启停/升级时限等）。需要先从 rule_query 拿规则 id；只更新传入的字段",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "规则 ID，必填"
+          },
+          "alarmType": {
+            "type": "string",
+            "description": "告警类型，可选"
+          },
+          "alarmName": {
+            "type": "string",
+            "description": "规则名称，可选"
+          },
+          "enabled": {
+            "type": "string",
+            "description": "是否启用，可选（true/false 或 1/0）"
+          },
+          "thresholdValue": {
+            "type": "number",
+            "description": "触发阈值，可选"
+          },
+          "severity": {
+            "type": "string",
+            "description": "严重级别，可选（P0/P1/P2/P3）"
+          },
+          "escalateSeconds": {
+            "type": "integer",
+            "description": "升级时限（秒），可选"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "danger": true
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "domain": "fence",
+  "tools": [
+    {
+      "name": "fence_query",
+      "description": "查询电子围栏列表，可按关键字/类型过滤。回答'有哪些围栏''禁飞区/限飞区'等",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "keyword": {
+            "type": "string",
+            "description": "围栏名称关键字，可选"
+          },
+          "type": {
+            "type": "string",
+            "description": "围栏类型过滤，可选，不确定就不过滤"
+          },
+          "pageNum": {
+            "type": "integer",
+            "description": "页码，可选（默认返回全部）"
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "每页条数，可选，上限 100"
+          }
+        },
+        "required": []
+      },
+      "danger": false
+    },
+    {
+      "name": "fence_save",
+      "description": "新增或更新电子围栏（禁飞区/限飞区等）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "围栏名称，必填"
+          },
+          "type": {
+            "type": "string",
+            "description": "类型（no-fly/limit/allow 等），可选"
+          },
+          "points": {
+            "type": "string",
+            "description": "围栏坐标点，可选"
+          },
+          "description": {
+            "type": "string",
+            "description": "描述，可选"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "fence_delete",
+      "description": "删除电子围栏（不可恢复）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "fenceId": {
+            "type": "integer",
+            "description": "围栏 ID，必填"
+          }
+        },
+        "required": [
+          "fenceId"
+        ]
+      },
+      "danger": true
+    }
+  ]
+}

@@ -1,0 +1,1007 @@
+{
+  "summary": {
+    "total": 60,
+    "avg_score": 2.0,
+    "pass": 60,
+    "partial": 0,
+    "fail": 0,
+    "pass_rate": 1.0,
+    "by_category": {
+      "anon_guard": 2.0,
+      "capability_gap": 2.0,
+      "cross_domain": 2.0,
+      "delegate_analysis": 2.0,
+      "delegate_report": 2.0,
+      "multi_hop": 2.0,
+      "plan_compare": 2.0,
+      "plan_report": 2.0,
+      "query_alarm": 2.0,
+      "query_dashboard": 2.0,
+      "query_drone": 2.0,
+      "query_fence": 2.0,
+      "query_media": 2.0,
+      "query_rule": 2.0,
+      "query_task": 2.0,
+      "query_user": 2.0,
+      "role_guard": 2.0,
+      "write_cancel": 2.0,
+      "write_confirm": 2.0,
+      "write_reject": 2.0
+    },
+    "fails": [],
+    "design_fails": []
+  },
+  "results": [
+    {
+      "qid": "biz-001",
+      "category": "query_drone",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.4,
+      "answer": "目前系统中共有 **9 台**无人机设备，状态分布如下：\n\n- 空闲：4 台\n- 占用：4 台\n- 维修中：1 台（总览接口未返回该数值，按总数 9 − 4 − 4 推算）\n\n如需逐台列出设备编号、名称和状态，我可以再拉一份设备明细。"
+    },
+    {
+      "qid": "biz-002",
+      "category": "query_drone",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 4/4 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 2.3,
+      "answer": "当前空闲（状态=空闲）的无人机共 4 台：\n\n| 编号 | 名称 | 型号 | 位置 | 累计架次 | 飞行时长 |\n|---|---|---|---|---|---|\n| D007 | 救援先锋 | DJI Matrice 300 RTK | 成都 | 120 | 85.5 h |\n| D009 | 巡检猎鹰 | DJI Matrice 30T | 上海 | 200 | 150.0 h |\n| D008 | 成都降雨 | 未知型号 | 春熙路 | 0 | 0 h |\n| D006 | 测绘精英 | DJI Mavic 3 Enterprise | 深圳仓库1号 | 28 | 35.0 h |\n\n需要给其中某台派任务的话，告诉我任务名称即可。"
+    },
+    {
+      "qid": "biz-003",
+      "category": "query_drone",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 2.3,
+      "answer": "D009「巡检猎鹰」当前状态正常，可随时执行任务：\n\n- **设备编号**：D009\n- **名称**：巡检猎鹰\n- **型号**：DJI Matrice 30T（多旋翼）\n- **状态**：空闲（0）\n- **所在位置**：上海\n- **累计架次**：200 架次\n- **累计飞行时长**：150.00 小时\n- **购入日期**：2025-09-01\n- **最近更新**：2026-09-15 17:15:50\n\n设备处于空闲状态，无维修记录，可以正常派发任务。需要我帮它安排任务或查看相关告警吗？"
+    },
+    {
+      "qid": "biz-004",
+      "category": "query_drone",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 3/3 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 2.5,
+      "answer": "系统里没有\"北京仓库\"这个字段值，但按位置匹配到 **北京仓库1号 / 2号** 共 3 台设备：\n\n| 编号 | 名称 | 型号 | 位置 | 状态 |\n|---|---|---|---|---|\n| D001 | 航拍一号 | DJI Matrice 300 RTK | 北京仓库1号 | 占用 |\n| D002 | 测绘先锋 | DJI Phantom 4 RTK | 北京仓库1号 | 占用 |\n| D003 | 植保精灵 | DJI Agras T40 | 北京仓库2号 | 占用 |\n\n3 台当前均为**占用**状态，无空闲设备。"
+    },
+    {
+      "qid": "biz-005",
+      "category": "query_drone",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 3.1,
+      "answer": "系统里共有 **2 台** DJI Matrice 300 RTK：\n\n| 编号 | 名称 | 状态 | 位置 | 飞行架次 | 飞行时长 |\n|---|---|---|---|---|---|\n| D001 | 航拍一号 | 占用 | 北京仓库1号 | 120 | 156.50 h |\n| D007 | 救援先锋 | 空闲 | 成都 | 120 | 85.50 h |\n\n（注：按型号关键字直接搜索无结果，以上是从全量设备列表中筛出的。）"
+    },
+    {
+      "qid": "biz-006",
+      "category": "query_drone",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.9,
+      "answer": "飞行架次最多的是 **D009 巡检猎鹰**（DJI Matrice 30T，上海，当前空闲），累计飞行 **200 架次**、**150.00 小时**。\n\n排名靠前的还有：\n- D007 救援先锋：120 架次 / 85.50 小时\n- D001 航拍一号：120 架次 / 156.50 小时\n- D002 测绘先锋：88 架次 / 98.30 小时"
+    },
+    {
+      "qid": "biz-007",
+      "category": "query_drone",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 2.4,
+      "answer": "D005 目前**不能使用**——它处于**维修中**状态。\n\n- 编号/名称：D005 航拍二号\n- 型号：Autel EVO II Pro（航拍机型）\n- 状态：**维修中**（占用中不可派任务）\n- 位置：上海仓库1号\n- 累计飞行：18 架次 / 22.50 小时\n- 最近更新：2026-07-15 17:24:34\n\n如果需要，我可以帮你把它恢复为空闲（维保完成），或者从其他空闲设备里挑一台替代执行任务。"
+    },
+    {
+      "qid": "biz-008",
+      "category": "query_task",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.5,
+      "answer": "系统里共有 **8 个任务**，状态分布如下：\n\n- 已派发（assigned）：3 个\n- 已完成（completed）：1 个\n- 执行中（executing）：1 个\n- 待分配（pending）：1 个\n- 待审核（pending_audit）：1 个\n- 已驳回（rejected）：1 个\n\n按优先级看：高 4 个、中 2 个、低 2 个。"
+    },
+    {
+      "qid": "biz-009",
+      "category": "query_task",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 3/3 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 2.8,
+      "answer": "高优先级任务共 4 个（系统里优先级字段值为 high）：\n\n| ID | 任务名称 | 状态 | 飞手 | 设备 |\n|---|---|---|---|---|\n| 8 | 峨眉山航拍 | 已派发 | 李明 | 航拍一号 |\n| 1 | 北京CBD区域航拍任务 | 已派发 | 飞张 | 航拍一号 |\n| 5 | 输电线路巡检 | 已完成 | 飞张 | 巡检卫士 |\n| 6 | 应急响应演习任务 | 已驳回 | 李明 | 航拍一号 |\n\n其中仍在推进的是 8、1 两条（已派发）；5 已完成，6 已被驳回。"
+    },
+    {
+      "qid": "biz-010",
+      "category": "query_task",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.4,
+      "answer": "有 1 个还没派出去的任务：\n\n- **#38 test_task** — 优先级：低，状态：待分配，飞手/设备均未指派\n\n需要我把它派发出去吗？"
+    },
+    {
+      "qid": "biz-011",
+      "category": "query_task",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 3/3 全中",
+      "verify": "无核验项",
+      "mode": "PLAN",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 2.2,
+      "answer": "飞手「飞张」名下共有 3 个任务：\n\n| 任务 ID | 任务名称 | 优先级 | 状态 | 设备 |\n|---|---|---|---|---|\n| 1 | 北京CBD区域航拍任务 | 高 | 已派发 | 航拍一号 |\n| 2 | 上海工业园区巡检任务 | 中 | 已派发 | 巡检卫士 |\n| 5 | 输电线路巡检 | 高 | 已完成 | 巡检卫士 |\n\n其中 2 个处于「已派发」（待执行），1 个「已完成」。\n\n补充说明：用户列表里没有查到名为「飞张」的账号（可能是账号名与任务里的飞手姓名不一致），以上结果是从任务列表中按飞手姓名「飞张」筛选得出的。"
+    },
+    {
+      "qid": "biz-012",
+      "category": "query_task",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.4,
+      "answer": "「峨眉山航拍」任务当前情况：\n\n- **任务 ID**：8\n- **状态**：已派发（assigned）\n- **优先级**：高\n- **飞手**：李明\n- **设备**：航拍一号\n- **计划时间**：2026-07-11 00:00:00 ～ 2026-07-11 16:22:53\n\n任务已派发给飞手李明，尚未开始执行。需要我帮你催单、改派或做其他操作吗？"
+    },
+    {
+      "qid": "biz-013",
+      "category": "query_task",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.7,
+      "answer": "当前执行中的任务有 1 个：\n\n- **农田植保喷洒任务**（ID 3）｜优先级：低｜状态：执行中\n  - 飞手：李明\n  - 设备：植保精灵\n  - 计划时间：2024-06-03 06:00:00 ~ 10:00:00"
+    },
+    {
+      "qid": "biz-014",
+      "category": "query_task",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.5,
+      "answer": "目前有 1 个任务待审核：\n\n- **任务 #4「测绘建模任务A区」** — 状态：待审核，优先级：中，飞手：王芳，设备：测绘先锋，计划时间：2024-06-04 08:00 ~ 18:00\n\n需要我帮你审核通过或驳回吗？"
+    },
+    {
+      "qid": "biz-015",
+      "category": "query_task",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.2,
+      "answer": "有 1 个被驳回的任务：\n\n- **任务 ID 6**：应急响应演习任务（优先级：高，状态：已驳回）\n  - 飞手：李明｜设备：航拍一号\n  - 计划时间：2024-05-28 14:00 ~ 16:00\n\n需要我查看它的审核意见或做其他处理吗？"
+    },
+    {
+      "qid": "biz-016",
+      "category": "query_alarm",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.7,
+      "answer": "告警共 **12 条**，处理状态分布如下：\n\n- **待处理（pending）**：2 条 — D007 电子围栏越界（P0）、D002 开机自检失败（P1）\n- **已确认（acknowledged）**：4 条 — D001 信号丢失（P1）、D003 电机#3 故障（P1）、D009 航线任务失败（P2）、D006 固件版本过旧（P3）\n- **已解决（resolved）**：6 条 — D007 姿态异常（P1）、D005 低电量（P2）、D008 高度超限（P2）、D001 GPS 丢星（P2）、D004 保养到期（P3）、D003 强制返航（P3）\n\n其中 2 条待处理里含 1 条 P0（D007 电子围栏越界），建议优先处置。"
+    },
+    {
+      "qid": "biz-017",
+      "category": "query_alarm",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.4,
+      "answer": "当前有 2 条告警处于**待处理**状态：\n\n| ID | 告警 | 级别 | 设备 | 触发时间 |\n|---|---|---|---|---|\n| 1 | 电子围栏越界 | P0 | D007 | 2026-09-15 07:38:49 |\n| 5 | 开机自检失败（传感器故障） | P1 | D002 | 2026-09-14 23:38:49 |\n\n其中 **D007 电子围栏越界是 P0 级**，建议优先处置。需要我确认/解决某条告警吗？"
+    },
+    {
+      "qid": "biz-018",
+      "category": "query_alarm",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.8,
+      "answer": "有 1 条 P0 级告警：\n\n- **D007 电子围栏越界**（geofence_break）｜P0｜状态：待处理｜触发时间：2026-09-15 07:38:49｜告警 ID：1\n\n需要我确认或处置这条告警吗？"
+    },
+    {
+      "qid": "biz-019",
+      "category": "query_alarm",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.8,
+      "answer": "D007 共出过 2 条告警：\n\n| 告警 | 类型 | 级别 | 状态 | 触发时间 |\n|---|---|---|---|---|\n| D007 电子围栏越界 | 电子围栏越界 | P0 | 待处理 | 2026-09-15 07:38:49 |\n| D007 姿态异常 | IMU异常 | P1 | 已解决 | 2026-09-14 13:38:49 |\n\n其中「电子围栏越界」是 P0 级、目前仍待处理，建议优先关注。需要我查看这条告警的详情或进行处置吗？"
+    },
+    {
+      "qid": "biz-020",
+      "category": "query_alarm",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 4/4 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 2.0,
+      "answer": "已确认但尚未解决的告警共 4 条：\n\n| ID | 告警 | 设备 | 级别 | 触发时间 |\n|----|------|------|------|----------|\n| 2 | D001 信号丢失 | D001 | P1 | 2026-09-15 05:38:49 |\n| 3 | D003 电机#3 故障（动力系统异常） | D003 | P1 | 2026-09-15 03:38:49 |\n| 12 | D009 航线任务失败（任务异常中断） | D009 | P2 | 2026-09-14 09:38:49 |\n| 9 | D006 固件版本过旧（固件过期） | D006 | P3 | 2026-09-14 15:38:49 |\n\n其中 2 条 P1（D001 信号丢失、D003 电机故障）建议优先处置。需要我解决其中某条，或查看某条的详情/处理时间线吗？"
+    },
+    {
+      "qid": "biz-021",
+      "category": "query_rule",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.3,
+      "answer": "低电量告警（规则 ID 1）的触发阈值是**两级**：\n\n- **一级：电量 20%**（level1）\n- **二级：电量 10%**（level2）\n\n其他配置：严重级别 **P1**，升级时限 **60 秒**，当前为**启用**状态。"
+    },
+    {
+      "qid": "biz-022",
+      "category": "query_alarm",
+      "role": "admin",
+      "score": 2,
+      "reason": "无硬断言，按行为描述通过",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.3,
+      "answer": "目前告警整体解决率为 **83.33%**。\n\n- 告警总数：12 条\n- 待处理：2 条（P0 1 条、P1 3 条、P2 1 条、P3 1 条，其中部分为分级统计口径）\n- 今日已解决：0 条\n\n需要我帮您看看具体是哪些告警还没处理吗？"
+    },
+    {
+      "qid": "biz-023",
+      "category": "query_fence",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.7,
+      "answer": "电子围栏共 **8 个**，类型分布如下：\n\n- **禁飞区（no-fly）4 个**：高原禁飞区、重庆、天安门禁飞区、军事管理区\n- **允许飞行区（allowed）3 个**：四川、测试飞行区A、工业园区巡检区\n- **限飞区（restricted）1 个**：机场限飞区A\n\n补充：其中「机场限飞区A」和「军事管理区」当前为停用状态（status=0），其余 6 个均启用。"
+    },
+    {
+      "qid": "biz-024",
+      "category": "query_fence",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 4/4 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.9,
+      "answer": "系统里共有 4 个禁飞区：\n\n| 编号 | 名称 | 状态 | 说明 |\n|---|---|---|---|\n| 9 | 高原禁飞区 | 启用 | 地处高原地带，气温较低，禁止飞行 |\n| 8 | 重庆 | 启用 | 热的批爆 |\n| 1 | 天安门禁飞区 | 启用 | 北京市天安门周边核心禁飞区域，禁止任何无人机飞行 |\n| 5 | 军事管理区 | 停用 | 军事管理区，严格禁止无人机飞行 |\n\n其中「军事管理区」当前为停用状态，其余 3 个均生效中。"
+    },
+    {
+      "qid": "biz-025",
+      "category": "query_fence",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.6,
+      "answer": "当前处于停用状态（status=0）的围栏有 2 个：\n\n- **机场限飞区A**（ID 2，类型：限飞区 restricted）—— 北京首都机场周边限飞区域，飞行需特别审批\n- **军事管理区**（ID 5，类型：禁飞区 no-fly）—— 军事管理区，严格禁止无人机飞行\n\n其余 6 个围栏均为启用状态（含天安门禁飞区、高原禁飞区、重庆、四川、测试飞行区A、工业园区巡检区）。"
+    },
+    {
+      "qid": "biz-026",
+      "category": "query_fence",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 3.7,
+      "answer": "四川围栏的信息如下：\n\n- **名称**：四川\n- **类型**：allowed（允许飞行区）\n- **状态**：启用中\n- **描述**：天府兴趣\n\n关于\"覆盖哪里\"：我查了系统里全部 8 个围栏，围栏数据只包含名称、类型、状态和描述四个字段，**没有坐标点/覆盖范围字段**（其他围栏如\"天安门禁飞区\"也只有文字描述）。所以四川围栏的覆盖范围在系统里只能看到描述\"天府兴趣\"，没有精确的边界坐标数据可查。"
+    },
+    {
+      "qid": "biz-027",
+      "category": "query_media",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "PLAN",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 2.8,
+      "answer": "共 8 个任务，其中只有 2 个任务有媒体文件：\n\n| 任务 | 状态 | 媒体总数 | 照片 | 视频 |\n|---|---|---|---|---|\n| 输电线路巡检（ID 5） | 已完成 | 4 | 3 | 1 |\n| 应急响应演习任务（ID 6） | 已驳回 | 2 | 1 | 1 |\n\n其余 6 个任务（test_task、峨眉山航拍、北京CBD区域航拍任务、上海工业园区巡检任务、农田植保喷洒任务、测绘建模任务A区）暂无采集到媒体文件。"
+    },
+    {
+      "qid": "biz-028",
+      "category": "query_dashboard",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 2.3,
+      "answer": "**整体运营情况概览**\n\n**资源规模**\n- 用户 13 个（启用 12、禁用 1）\n- 无人机 9 台：空闲 4 台、占用 4 台（维修中数量未返回）\n- 飞行任务 8 个、电子围栏 8 个、媒体文件 6 个\n- 累计飞行 651 架次、660.8 小时\n\n**任务状态分布（共 8 个）**\n- 已派发 3、执行中 1、待分配 1、待审核 1、已完成 1、已驳回 1\n\n**任务优先级分布**\n- 高 4、中 2、低 2\n\n**围栏类型分布（共 8 个）**\n- 禁飞区 4、允许区 3、限飞区 1\n\n**小结**：设备利用率约一半（4 空闲 / 4 占用），任务侧有 1 个待分配、1 个待审核需要跟进，高优先级任务占比偏高（4/8）。需要我进一步看告警情况或某类明细吗？"
+    },
+    {
+      "qid": "biz-029",
+      "category": "query_rule",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.9,
+      "answer": "告警规则共 **23 条**，目前**全部处于启用状态**（enabled=1）。\n\n已列出的 20 条规则如下（按严重级别）：\n\n**P0（紧急，升级时限 60 秒）**\n- 信号丢失、动力系统异常、IMU异常、电子围栏越界、限高突破、障碍物逼近、禁飞区入侵、任务异常中断\n\n**P1（升级时限 60 秒~300 秒）**\n- 低电量告警、GPS信号弱、传感器故障、限速突破、强风告警、恶劣天气、电磁干扰\n\n**P2（升级时限 1 小时~24 小时）**\n- 云台异常、任务超时、指派超时未接、审核超时\n\n返回结果被截断，第 21~23 条未完整显示。需要我拉取剩余几条的详情吗？"
+    },
+    {
+      "qid": "biz-030",
+      "category": "query_rule",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 3/3 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 2.1,
+      "answer": "P0 级别（最高优先级）的告警规则共 **10 条**，均为启用状态，升级时限都是 60 秒：\n\n| ID | 规则名称 | 类型 | 触发条件 |\n|---|---|---|---|\n| 2 | 信号丢失 | signal_lost | 超时 30 秒 |\n| 4 | 动力系统异常 | motor_fault | — |\n| 5 | IMU异常 | imu_fault | — |\n| 8 | 电子围栏越界 | geofence_break | 距离 0 |\n| 9 | 限高突破 | altitude_over | 最大高度 120 |\n| 11 | 障碍物逼近 | obstacle_close | 最小距离 5 |\n| 12 | 禁飞区入侵 | no_fly_zone | — |\n| 14 | 任务异常中断 | task_abort | — |\n| 20 | 温度异常 | temp_abnormal | 最低温度 -10（阈值被截断） |\n\n说明：规则列表共 23 条，其中 P0 共 10 条（上表列出 9 条，第 10 条因返回内容截断未完整显示，如需完整清单可再查一次）。这些 P"
+    },
+    {
+      "qid": "biz-031",
+      "category": "write_confirm",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "未确认不应落库",
+      "mode": "PLAN",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 3.9,
+      "answer": "⚠️ 这是一个**写操作**，需要你确认后才会执行。\n\n**执行人**：admin（权限：admin）\n**将要执行**：创建飞行任务「E2E-评测-031」（优先级 高）（飞手 李明）\n\n确认请回复「**确认**」，放弃请回复「**取消**」。（10 分钟内有效，未确认前不会改动任何数据）"
+    },
+    {
+      "qid": "biz-032",
+      "category": "write_confirm",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "确认后已落库",
+      "mode": "REACT",
+      "intents": [
+        "business",
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.5,
+      "answer": "✅ 已执行：创建飞行任务「E2E-评测-032」（优先级 低）\n\n任务「E2E-评测-032」已创建"
+    },
+    {
+      "qid": "biz-033",
+      "category": "write_cancel",
+      "role": "admin",
+      "score": 2,
+      "reason": "无硬断言，按行为描述通过",
+      "verify": "取消后未落库",
+      "mode": "REACT",
+      "intents": [
+        "business",
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.4,
+      "answer": "好的，已取消「创建飞行任务「E2E-评测-033」」，业务系统没有任何改动。"
+    },
+    {
+      "qid": "biz-034",
+      "category": "write_reject",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "test_task 状态 pending",
+      "mode": "REACT",
+      "intents": [
+        "business",
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.7,
+      "answer": "❌ 执行失败：参数校验失败\n\n（下发任务 38（会占用对应设备与飞手） 未生效，数据没有被改动）"
+    },
+    {
+      "qid": "biz-035",
+      "category": "write_confirm",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "test_task 已删除",
+      "mode": "REACT",
+      "intents": [
+        "business",
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 2.2,
+      "answer": "✅ 已执行：删除任务 38（不可恢复）\n\n任务 38 已删除"
+    },
+    {
+      "qid": "biz-036",
+      "category": "write_reject",
+      "role": "admin",
+      "score": 2,
+      "reason": "无硬断言，按行为描述通过",
+      "verify": "id5 仍在（删除被正确拦截）",
+      "mode": "REACT",
+      "intents": [
+        "business",
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.4,
+      "answer": "❌ 执行失败：存在关联数据，禁止删除\n\n（删除任务 5（不可恢复） 未生效，数据没有被改动）"
+    },
+    {
+      "qid": "biz-037",
+      "category": "write_reject",
+      "role": "admin",
+      "score": 2,
+      "reason": "无硬断言，按行为描述通过",
+      "verify": "告警4状态 resolved",
+      "mode": "REACT",
+      "intents": [
+        "business",
+        "chitchat"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 3.8,
+      "answer": "我这边处理不了告警操作——我是闲聊模块，没有对接业务系统，标记告警这类事得走业务助手链路。你直接说操作指令，系统会请你确认。"
+    },
+    {
+      "qid": "biz-038",
+      "category": "write_confirm",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "D008 状态 2（2=维修中）",
+      "mode": "REACT",
+      "intents": [
+        "business",
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.4,
+      "answer": "✅ 已执行：将设备 ID=8 的维保状态设为「2」\n\n设备 8 状态已设为「维修中」"
+    },
+    {
+      "qid": "biz-039",
+      "category": "role_guard",
+      "role": "pilot",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "越权未落库",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 2.0,
+      "answer": "创建任务失败：当前账号是「pilot（飞手）」权限，没有创建任务的权限，需要管理员账号才能执行。请联系管理员操作，或改用查询类需求。"
+    },
+    {
+      "qid": "biz-040",
+      "category": "query_task",
+      "role": "pilot",
+      "score": 2,
+      "reason": "无硬断言，按行为描述通过",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 19.5,
+      "answer": "当前系统里没有任何飞行任务，任务列表为空（总数 0）。\n\n如果你记得有具体任务名或状态，我可以再按条件查一次；或者需要新建任务的话，告诉我任务名称即可。"
+    },
+    {
+      "qid": "biz-041",
+      "category": "role_guard",
+      "role": "maintainer",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "未落库",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.3,
+      "answer": "新增设备需要管理员权限，当前账号是「maintainer（维修员）」，无法执行该操作。请联系管理员来创建这台 D010「测试机」。"
+    },
+    {
+      "qid": "biz-042",
+      "category": "anon_guard",
+      "role": "anonymous",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 0.0,
+      "answer": "这是业务系统功能（设备/任务/告警/围栏等），需要登录后才能查询和操作。\n\n请先在前端右上角登录你的账号，登录后我就能直接帮你查真实数据、执行经你确认的写操作。知识问答（法规/操作/机型选购）无需登录，随时可以问我。"
+    },
+    {
+      "qid": "biz-043",
+      "category": "capability_gap",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 2.7,
+      "answer": "系统里没有叫「李明」的飞手，但有一位用户名 **liming**（ID 3，32 岁，女，账号状态：启用）——很可能就是你要找的人。\n\n需要说明的是：**用户账号本身只有「启用/禁用」状态，没有「空闲/忙碌」这个字段**。飞手是否空闲，取决于 TA 名下有没有正在执行的任务。如果你要的是这个，我可以帮你查一下 liming 当前是否有进行中的任务——需要的话告诉我。"
+    },
+    {
+      "qid": "biz-044",
+      "category": "capability_gap",
+      "role": "admin",
+      "score": 2,
+      "reason": "无硬断言，按行为描述通过",
+      "verify": "规则总数 23",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 3.2,
+      "answer": "⚠️ 这是一个**写操作**，需要你确认后才会执行。\n\n**执行人**：admin（权限：admin）\n**将要执行**：更新告警规则 ID=0，名称改为「电池温度过高」，阈值改为 60，级别改为 P1，启用该规则（只更新列出的字段）\n\n确认请回复「**确认**」，放弃请回复「**取消**」。（10 分钟内有效，未确认前不会改动任何数据）"
+    },
+    {
+      "qid": "biz-045",
+      "category": "capability_gap",
+      "role": "admin",
+      "score": 2,
+      "reason": "无硬断言，按行为描述通过",
+      "verify": "tomcat 仍在",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.5,
+      "answer": "⚠️ 这是一个**写操作**，需要你确认后才会执行。\n\n**执行人**：admin（权限：admin）\n**将要执行**：删除用户 ID=10（不可恢复；若其有关联任务/告警会被系统拒绝）\n\n确认请回复「**确认**」，放弃请回复「**取消**」。（10 分钟内有效，未确认前不会改动任何数据）"
+    },
+    {
+      "qid": "biz-046",
+      "category": "cross_domain",
+      "role": "admin",
+      "score": 2,
+      "reason": "无硬断言，按行为描述通过",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "rag"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 3.0,
+      "answer": "关于这个问题，我查了无人机知识库，现有内容只覆盖了相关主题（如03-安防监控方案、无人机起飞前检查清单与场地评估、DJI Mini 系列机型参数与合规特点），但没有能直接回答「明天成都天气怎么样？适合飞无人机吗？」的资料。为了避免给你不准确的信息，这个问题我先如实说明：知识库暂未收录。\n\n你可以换个角度问问我知识库里有的话题，或者查阅官方技术资料。"
+    },
+    {
+      "qid": "biz-047",
+      "category": "capability_gap",
+      "role": "admin",
+      "score": 2,
+      "reason": "无硬断言，按行为描述通过",
+      "verify": "媒体总数 6",
+      "mode": "PLAN",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 3.2,
+      "answer": "任务 5 存在：**输电线路巡检**（已完成，飞手飞张，设备巡检卫士）。不过要上传文件，我还需要知道具体是哪个文件——你只说了\"这个文件\"，但没有提供文件名。\n\n请告诉我**暂存目录里的文件名**（例如 `D005巡检.jpg`），我拿到文件名后就会发起上传。"
+    },
+    {
+      "qid": "biz-048",
+      "category": "multi_hop",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "PLAN",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 2.4,
+      "answer": "共 8 个任务，按飞手统计如下：\n\n| 飞手 | 任务数 | 任务明细 |\n|---|---|---|\n| 飞张 | 3 | 北京CBD区域航拍任务（已派发）、上海工业园区巡检任务（已派发）、输电线路巡检（已完成） |\n| 李明 | 3 | 峨眉山航拍（已派发）、农田植保喷洒任务（执行中）、应急响应演习任务（已驳回） |\n| 王芳 | 1 | 测绘建模任务A区（待审核） |\n| 未分配 | 1 | test_task（待分配，无飞手） |\n\n合计 8 个任务：飞张 3 个、李明 3 个、王芳 1 个，另有 1 个待分配任务尚未指派飞手。"
+    },
+    {
+      "qid": "biz-049",
+      "category": "multi_hop",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 3/3 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 2.8,
+      "answer": "当前有 4 台设备处于占用状态，但系统里只有 1 个任务处于「执行中」，对应关系如下：\n\n**占用中的设备（4 台）**\n- D001 航拍一号（DJI Matrice 300 RTK）— 北京仓库1号\n- D002 测绘先锋（DJI Phantom 4 RTK）— 北京仓库1号\n- D003 植保精灵（DJI Agras T40）— 北京仓库2号\n- D004 巡检卫士（DJI Matrice 30T）— 上海仓库1号\n\n**执行中的任务（1 个）**\n- 任务 #3「农田植保喷洒任务」— 优先级低，飞手李明，设备植保精灵（D003），执行时段 2024-06-03 06:00–10:00\n\n也就是说，只有 D003 植保精灵能明确对应到正在执行的任务；D001、D002、D004 虽显示为占用，但当前没有处于「执行中」的任务与之关联（可能处于已派发待执行、或被其他占用场景占用）。需要的话我可以按「已派发」状态再查一遍，看这几台是否挂在待执行任务上。"
+    },
+    {
+      "qid": "biz-050",
+      "category": "multi_hop",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "PLAN",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 4.2,
+      "answer": "当前待处理告警共 2 条，涉及 2 台设备：\n\n| 告警 | 级别 | 触发时间 | 设备 | 设备当前状态 |\n|---|---|---|---|---|\n| D007 电子围栏越界 | P0 | 2026-09-15 07:38:49 | D007 救援先锋（DJI Matrice 300 RTK，成都） | 空闲 |\n| D002 开机自检失败（传感器故障） | P1 | 2026-09-14 23:38:49 | D002 测绘先锋（DJI Phantom 4 RTK，北京仓库1号） | 占用 |\n\n说明：\n- **D007 救援先锋** 目前状态为**空闲**，但存在 P0 级围栏越界告警，建议优先处置。\n- **D002 测绘先锋** 目前状态为**占用**（正在执行任务），同时有 P1 级传感器故障告警，需关注是否影响当前飞行安全。\n\n需要我对这两条告警做确认/处置，或进一步查看告警详情吗？"
+    },
+    {
+      "qid": "biz-051",
+      "category": "query_user",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.3,
+      "answer": "tomcat 账号目前**处于禁用状态，不能使用**。\n\n- 用户名：tomcat（ID 10）\n- 角色：飞手（pilot）\n- 状态：**禁用（0）**\n- 联系方式：16955698965 / tomcat@163.com\n\n如需恢复使用，可以把它重新启用（状态改为 1）；需要我帮你操作吗？"
+    },
+    {
+      "qid": "biz-052",
+      "category": "query_user",
+      "role": "admin",
+      "score": 2,
+      "reason": "无硬断言，按行为描述通过",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.9,
+      "answer": "系统里共有 **13 个用户账号**，按角色分布：\n\n- **管理员（admin）1 个**：admin\n- **飞手（pilot）6 个**：山海观雾、tomcat（已禁用）、pilot、wangfang、liming、feizhang\n- **维修员（maintainer）5 个**：e2e_maint、shgwxjj、maint、zzh、zhaowei\n- 另有 1 个测试账号 e2e_pilot（飞手）\n\n其中 **tomcat 处于禁用状态**，其余 12 个均为启用。"
+    },
+    {
+      "qid": "biz-053",
+      "category": "query_alarm",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 3/3 全中",
+      "verify": "无核验项",
+      "mode": "REACT",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 1.7,
+      "answer": "P1 级告警共 4 条，其中**未解决的有 3 条**（1 条已解决）：\n\n| ID | 告警 | 设备 | 状态 | 触发时间 |\n|----|------|------|------|----------|\n| 5 | D002 开机自检失败（传感器故障） | D002 | 待处理 | 2026-09-14 23:38:49 |\n| 2 | D001 信号丢失 | D001 | 已确认 | 2026-09-15 05:38:49 |\n| 3 | D003 电机#3 故障（动力系统异常） | D003 | 已确认 | 2026-09-15 03:38:49 |\n\n已解决：ID 10「D007 姿态异常（IMU异常）」。\n\n其中 ID 5 还处于「待处理」，尚未有人确认；ID 2、3 已确认但未闭环。需要我代为确认/解决某条吗？"
+    },
+    {
+      "qid": "biz-054",
+      "category": "plan_report",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "无核验项",
+      "mode": "PLAN",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 4.7,
+      "answer": "# 任务简报（共 8 个任务）\n\n**状态分布**\n\n| 状态 | 数量 | 占比 |\n|---|---|---|\n| 已派发（assigned） | 3 | 37.5% |\n| 待分配（pending） | 2 | 25.0% |\n| 执行中（executing） | 1 | 12.5% |\n| 待审核（pending_audit） | 1 | 12.5% |\n| 已完成（completed） | 1 | 12.5% |\n| 已驳回（rejected） | 1 | 12.5% |\n\n**明细**\n\n- 待分配：`#40 test_task`（低）、`#4 测绘建模任务A区`（中，王芳/测绘先锋）\n- 已派发：`#8 峨眉山航拍`（高，李明/航拍一号）、`#1 北京CBD区域航拍任务`（高，飞张/航拍一号）、`#2 上海工业园区巡检任务`（中，飞张/巡检卫士）\n- 执行中：`#3 农田植保喷洒任务`（低，李明/植保精灵）\n- 待审核：`#4 测绘建模任务A区`（中，王芳/测绘先锋）\n- 已完成：`#5 输电线路巡检`（高，飞张/巡检卫士）\n- 已驳回：`#6 应急响应演习任务`（高，李"
+    },
+    {
+      "qid": "biz-055",
+      "category": "plan_report",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 3/3 全中",
+      "verify": "无核验项",
+      "mode": "PLAN",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 4.6,
+      "answer": "# 设备盘点报告\n\n**盘点范围**：全队共 9 台无人机设备\n\n| 编号 | 名称 | 所在位置 | 累计飞行小时 |\n|------|------|----------|--------------|\n| D001 | 航拍一号 | 北京仓库1号 | 156.50 |\n| D002 | 测绘先锋 | 北京仓库1号 | 98.30 |\n| D003 | 植保精灵 | 北京仓库2号 | 67.80 |\n| D004 | 巡检卫士 | 上海仓库1号 | 45.20 |\n| D005 | 航拍二号 | 上海仓库1号 | 22.50 |\n| D006 | 测绘精英 | 深圳仓库1号 | 35.00 |\n| D007 | 救援先锋 | 成都 | 85.50 |\n| D008 | 成都降雨 | 春熙路 | 0.00 |\n| D009 | 巡检猎鹰 | 上海 | 150.00 |\n\n**汇总**\n- 累计飞行小时合计：**660.80 小时**\n- 飞行时长前三：D001 航拍一号（156.50h）、D009 巡检猎鹰（150.00h）、D002 测绘先锋（98.30h）\n- 零飞行记录：D008"
+    },
+    {
+      "qid": "biz-056",
+      "category": "plan_compare",
+      "role": "admin",
+      "score": 2,
+      "reason": "无硬断言，按行为描述通过",
+      "verify": "无核验项",
+      "mode": "PLAN",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 4.1,
+      "answer": "**结论：北京 3 台、上海 3 台，两地数量持平；但状态构成不同——北京 3 台全部为「占用」，上海是「占用 1 台 + 维修中 1 台 + 空闲 1 台」。**\n\n按所在位置归属（系统里位置字段是\"北京仓库1号/2号\"\"上海仓库1号\"）：\n\n**北京（3 台，全部占用）**\n- D001 航拍一号 — 占用 — 北京仓库1号\n- D002 测绘先锋 — 占用 — 北京仓库1号\n- D003 植保精灵 — 占用 — 北京仓库2号\n\n**上海（3 台：占用 1、维修 1、空闲 1）**\n- D004 巡检卫士 — 占用 — 上海仓库1号\n- D005 航拍二号 — 维修中 — 上海仓库1号\n- D009 巡检猎鹰 — 空闲 — 上海\n\n**对比要点**\n- 总数：北京 3 台 = 上海 3 台，**不分伯仲**。\n- 可用性：北京 0 台空闲（全在占用），上海有 1 台空闲（D009 巡检猎鹰）可立即调度，另有 1 台在维修。\n- 若按\"可立即投入任务\"衡量，**上海更宽裕**；北京目前无空闲设备。\n\n补充：全系统共 9 台设备，其余 3 台分别在成都（D007 救援先锋，空闲）、春熙"
+    },
+    {
+      "qid": "biz-057",
+      "category": "delegate_analysis",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "无核验项",
+      "mode": "PLAN",
+      "intents": [
+        "business"
+      ],
+      "delegates": [
+        "alarm-analyst"
+      ],
+      "design_ok": true,
+      "elapsed_s": 13.6,
+      "answer": "## D007 电子围栏越界（P0）分析结论\n\n**告警 ID 1｜geofence_break｜P0｜当前状态：pending（待处置）**\n\n### 一、告警事实\n- 触发时间：2026-09-15 07:38:49（MQTT 遥测自动上报）\n- 设备：**D007 救援先锋**（droneId=7）\n- 位置：lat 31.2304, lng 121.4737；高度 **85 m**\n- 越界围栏：**A-3 禁飞缓冲区**，越界距离 **120 m**\n- 关联任务：**无（taskId=null）**；关联飞手：**无（pilotId=null）**\n- 处理时间线：07:38:49 系统自动创建 → 14:34:20 **超时未处理被系统自动升级**；详情中 resolutionNote 标注「管理员忽略」，但 status 仍为 pending、acknowledgedAt/resolvedAt 均为 null —— 属**\"被忽略但未闭环\"的矛盾状态**。\n\n### 二、根因研判（按可能性排序）\n1. **无任务、无飞手的未授权飞行侵入禁飞区（首要怀疑）**：该架次既无"
+    },
+    {
+      "qid": "biz-058",
+      "category": "delegate_analysis",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 2/2 全中",
+      "verify": "无核验项",
+      "mode": "PLAN",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 7.4,
+      "answer": "## D002「测绘先锋」开机自检失败 — 原因分析\n\n**一、告警本身（ID 5）**\n- 类型：传感器故障（sensor_fault），级别 **P1**，当前状态 **待处理**\n- 触发时间：2026-09-14 23:38:49，由 MQTT 遥测自动上报\n- 自检明细：**模块 = GPS，错误码 = GPS_INIT_ERR，搜星数 = 0，重试 3 次仍失败**\n- 处理时间线：09-14 23:38 系统自动创建 → 09-15 15:26 超时未处理被系统自动升级 → 09-19 09:13 被管理员确认（备注\"管理员忽略\"），但**至今未真正解决（resolvedAt 为空）**\n\n**二、设备本身情况**\n- 编号 D002，名称「测绘先锋」，型号 DJI Phantom 4 RTK，类型 survey（测绘）\n- 位置：北京仓库1号；购入日期 2024-02-20\n- 当前状态：**占用（status=1）**，累计飞行 88 架次 / 98.30 小时\n- 该设备在系统内**仅此一条告警**，无其他历史告警记录\n\n**三、可能原因分析**\n结合\"GPS 模块"
+    },
+    {
+      "qid": "biz-059",
+      "category": "delegate_report",
+      "role": "admin",
+      "score": 2,
+      "reason": "无硬断言，按行为描述通过",
+      "verify": "无核验项",
+      "mode": "PLAN",
+      "intents": [
+        "business"
+      ],
+      "delegates": [
+        "ops-reporter"
+      ],
+      "design_ok": true,
+      "elapsed_s": 10.1,
+      "answer": "# 无人机业务运营简报（设备与告警整体概况）\n\n**数据来源**：运营总览仪表盘、告警分级统计、告警看板、设备列表、任务列表\n**口径说明**：设备状态以设备列表实数（9 台）为准；仪表盘\"维修中\"字段返回为空，已按列表实数校正。\n\n---\n\n## 一、总体概览\n\n| 指标 | 数值 |\n|---|---|\n| 用户总数 | 13（启用 12 / 停用 1） |\n| 设备总数 | 9 |\n| 任务总数 | 8 |\n| 电子围栏总数 | 8 |\n| 媒体文件总数 | 6 |\n| 累计架次 | 651 |\n| 累计飞行时长 | 660.8 小时 |\n\n**设备状态分布（9 台）**\n\n| 状态 | 数量 | 占比 |\n|---|---|---|\n| 空闲 | 4 | 44.4% |\n| 占用（执行中） | 4 | 44.4% |\n| 维修中 | 1 | 11.1% |\n\n> 维修中设备为 **D005 航拍二号**（Autel EVO II Pro，上海仓库1号）。\n\n**围栏类型分布**：禁飞区 4、允许区 3、限飞区 1。\n\n---\n\n## 二、告警态势\n\n**分级统计（累计 12 条"
+    },
+    {
+      "qid": "biz-060",
+      "category": "query_media",
+      "role": "admin",
+      "score": 2,
+      "reason": "硬断言 1/1 全中",
+      "verify": "无核验项",
+      "mode": "PLAN",
+      "intents": [
+        "business"
+      ],
+      "delegates": [],
+      "design_ok": true,
+      "elapsed_s": 2.9,
+      "answer": "「应急响应演习任务」（任务 ID 6）采集的视频文件是：**演习视频001.mp4**（媒体 ID 6，类型 video）。\n\n补充说明：该任务当前状态为**已驳回**，优先级高，飞手李明、设备航拍一号。"
+    }
+  ]
+}

@@ -1,0 +1,544 @@
+{
+  "generatedAt": "2026-09-24T16:16:35+08:00",
+  "source": "https://api.osv.dev/v1/querybatch",
+  "queried": [
+    "PyPI:annotated-doc@0.0.4",
+    "PyPI:annotated-types@0.8.0",
+    "PyPI:anyio@4.14.2",
+    "PyPI:cachetools@7.1.8",
+    "PyPI:certifi@2026.7.22",
+    "PyPI:charset-normalizer@3.4.9",
+    "PyPI:click@8.4.2",
+    "PyPI:colorama@0.4.6",
+    "PyPI:fastapi@0.140.13",
+    "PyPI:grpcio@1.84.0",
+    "PyPI:h11@0.16.0",
+    "PyPI:httpcore@1.0.9",
+    "PyPI:httptools@0.8.0",
+    "PyPI:httpx@0.28.1",
+    "PyPI:idna@3.18",
+    "PyPI:iniconfig@2.3.0",
+    "PyPI:numpy@2.4.6",
+    "PyPI:orjson@3.12.0",
+    "PyPI:packaging@26.2",
+    "PyPI:pandas@3.0.5",
+    "PyPI:pluggy@1.6.0",
+    "PyPI:protobuf@7.36.1",
+    "PyPI:pydantic@2.13.4",
+    "PyPI:pydantic-core@2.46.4",
+    "PyPI:pydantic-settings@2.15.0",
+    "PyPI:pygments@2.20.0",
+    "PyPI:pymilvus@3.0.1",
+    "PyPI:pytest@9.1.1",
+    "PyPI:python-dateutil@2.9.0.post0",
+    "PyPI:python-dotenv@1.2.2",
+    "PyPI:pyyaml@6.0.3",
+    "PyPI:requests@2.34.2",
+    "PyPI:six@1.17.0",
+    "PyPI:starlette@1.3.1",
+    "PyPI:typing-extensions@4.16.0",
+    "PyPI:typing-inspection@0.4.2",
+    "PyPI:tzdata@2026.3",
+    "PyPI:urllib3@2.7.0",
+    "PyPI:uvicorn@0.52.0",
+    "PyPI:watchfiles@1.2.0",
+    "PyPI:websockets@17.1",
+    "Maven:com.fasterxml:classmate@1.7.0",
+    "Maven:org.apache.commons:commons-lang3@3.14.0",
+    "Maven:org.hibernate.validator:hibernate-validator@8.0.1.Final",
+    "Maven:com.fasterxml.jackson.core:jackson-annotations@2.17.2",
+    "Maven:com.fasterxml.jackson.core:jackson-core@2.17.2",
+    "Maven:com.fasterxml.jackson.core:jackson-databind@2.17.2",
+    "Maven:com.fasterxml.jackson.dataformat:jackson-dataformat-yaml@2.17.2",
+    "Maven:com.fasterxml.jackson.datatype:jackson-datatype-jdk8@2.17.2",
+    "Maven:com.fasterxml.jackson.datatype:jackson-datatype-jsr310@2.17.2",
+    "Maven:com.fasterxml.jackson.module:jackson-module-parameter-names@2.17.2",
+    "Maven:jakarta.activation:jakarta.activation-api@2.1.3",
+    "Maven:jakarta.annotation:jakarta.annotation-api@2.1.1",
+    "Maven:jakarta.validation:jakarta.validation-api@3.0.2",
+    "Maven:jakarta.xml.bind:jakarta.xml.bind-api@4.0.2",
+    "Maven:org.jboss.logging:jboss-logging@3.5.3.Final",
+    "Maven:org.slf4j:jul-to-slf4j@2.0.16",
+    "Maven:com.github.xiaoymin:knife4j-core@4.4.0",
+    "Maven:com.github.xiaoymin:knife4j-openapi3-jakarta-spring-boot-starter@4.4.0",
+    "Maven:com.github.xiaoymin:knife4j-openapi3-ui@4.4.0",
+    "Maven:org.apache.logging.log4j:log4j-api@2.23.1",
+    "Maven:org.apache.logging.log4j:log4j-to-slf4j@2.23.1",
+    "Maven:ch.qos.logback:logback-classic@1.5.7",
+    "Maven:ch.qos.logback:logback-core@1.5.7",
+    "Maven:io.micrometer:micrometer-commons@1.13.3",
+    "Maven:io.micrometer:micrometer-observation@1.13.3",
+    "Maven:org.slf4j:slf4j-api@2.0.16",
+    "Maven:org.yaml:snakeyaml@2.2",
+    "Maven:org.springframework:spring-aop@6.1.12",
+    "Maven:org.springframework:spring-beans@6.1.12",
+    "Maven:org.springframework.boot:spring-boot@3.3.3",
+    "Maven:org.springframework.boot:spring-boot-autoconfigure@3.3.3",
+    "Maven:org.springframework:spring-context@6.1.12",
+    "Maven:org.springframework:spring-core@6.1.12",
+    "Maven:org.springframework:spring-expression@6.1.12",
+    "Maven:org.springframework:spring-jcl@6.1.12",
+    "Maven:org.springframework:spring-web@6.1.12",
+    "Maven:org.springframework:spring-webmvc@6.1.12",
+    "Maven:org.springdoc:springdoc-openapi-starter-common@2.3.0",
+    "Maven:org.springdoc:springdoc-openapi-starter-webmvc-api@2.3.0",
+    "Maven:org.springdoc:springdoc-openapi-starter-webmvc-ui@2.3.0",
+    "Maven:io.swagger.core.v3:swagger-annotations-jakarta@2.2.19",
+    "Maven:io.swagger.core.v3:swagger-core-jakarta@2.2.19",
+    "Maven:io.swagger.core.v3:swagger-models-jakarta@2.2.19",
+    "Maven:org.webjars:swagger-ui@5.10.3",
+    "Maven:org.apache.tomcat.embed:tomcat-embed-core@10.1.60",
+    "Maven:org.apache.tomcat.embed:tomcat-embed-el@10.1.60",
+    "Maven:org.apache.tomcat.embed:tomcat-embed-websocket@10.1.60",
+    "npm:@babel/helper-string-parser@7.29.7",
+    "npm:@babel/helper-validator-identifier@7.29.7",
+    "npm:@babel/parser@7.29.8",
+    "npm:@babel/types@7.29.8",
+    "npm:@jridgewell/sourcemap-codec@1.6.0",
+    "npm:@vue/compiler-core@3.5.42",
+    "npm:@vue/compiler-dom@3.5.42",
+    "npm:@vue/compiler-sfc@3.5.42",
+    "npm:@vue/compiler-ssr@3.5.42",
+    "npm:@vue/devtools-api@6.6.4",
+    "npm:@vue/reactivity@3.5.42",
+    "npm:@vue/runtime-core@3.5.42",
+    "npm:@vue/runtime-dom@3.5.42",
+    "npm:@vue/server-renderer@3.5.42",
+    "npm:@vue/shared@3.5.42",
+    "npm:agent-base@6.0.2",
+    "npm:asynckit@0.4.0",
+    "npm:axios@1.20.0",
+    "npm:call-bind-apply-helpers@1.0.2",
+    "npm:combined-stream@1.0.8",
+    "npm:core-js@3.50.0",
+    "npm:csstype@3.2.3",
+    "npm:debug@4.4.3",
+    "npm:delayed-stream@1.0.0",
+    "npm:dompurify@3.4.15",
+    "npm:dunder-proto@1.0.1",
+    "npm:entities@7.0.1",
+    "npm:es-define-property@1.0.1",
+    "npm:es-errors@1.3.0",
+    "npm:es-object-atoms@1.1.2",
+    "npm:es-set-tostringtag@2.1.0",
+    "npm:estree-walker@2.0.2",
+    "npm:follow-redirects@1.16.0",
+    "npm:form-data@4.0.6",
+    "npm:function-bind@1.1.2",
+    "npm:get-intrinsic@1.3.0",
+    "npm:get-proto@1.0.1",
+    "npm:gopd@1.2.0",
+    "npm:has-symbols@1.1.0",
+    "npm:has-tostringtag@1.0.2",
+    "npm:hasown@2.0.4",
+    "npm:highlight.js@11.12.0",
+    "npm:https-proxy-agent@5.0.1",
+    "npm:magic-string@0.30.21",
+    "npm:marked@18.0.13",
+    "npm:math-intrinsics@1.1.0",
+    "npm:mime-types@2.1.35",
+    "npm:mime-db@1.52.0",
+    "npm:ms@2.1.3",
+    "npm:nanoid@3.3.19",
+    "npm:picocolors@1.1.1",
+    "npm:postcss@8.5.28",
+    "npm:proxy-from-env@2.1.0",
+    "npm:source-map-js@1.2.1",
+    "npm:vue@3.5.42",
+    "npm:vue-router@4.6.4",
+    "npm:vuex@4.1.0"
+  ],
+  "findings": {
+    "Maven:org.apache.commons:commons-lang3@3.14.0": [
+      {
+        "id": "GHSA-j288-q9x7-2f5v",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "Apache Commons Lang is vulnerable to Uncontrolled Recursion when processing long inputs",
+        "aliases": [
+          "CVE-2025-48924"
+        ]
+      }
+    ],
+    "Maven:com.fasterxml.jackson.core:jackson-core@2.17.2": [
+      {
+        "id": "GHSA-r7wm-3cxj-wff9",
+        "severity": "HIGH",
+        "severitySource": "database_specific",
+        "summary": "jackson-core: Async parser maxNumberLength bypass via chunked digit accumulation (incomplete fix for GHSA-72hv-8253-57qq)",
+        "aliases": []
+      },
+      {
+        "id": "GHSA-72hv-8253-57qq",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "jackson-core: Number Length Constraint Bypass in Async Parser Leads to Potential DoS Condition",
+        "aliases": [
+          "CVE-2026-18401"
+        ]
+      }
+    ],
+    "Maven:com.fasterxml.jackson.core:jackson-databind@2.17.2": [
+      {
+        "id": "GHSA-j3rv-43j4-c7qm",
+        "severity": "HIGH",
+        "severitySource": "database_specific",
+        "summary": "jackson-databind has a PolymorphicTypeValidator bypass via generic type parameters that allows arbitrary class instantiation",
+        "aliases": [
+          "CVE-2026-54512"
+        ]
+      },
+      {
+        "id": "GHSA-rmj7-2vxq-3g9f",
+        "severity": "HIGH",
+        "severitySource": "database_specific",
+        "summary": "jackson-databind has an array subtype allowlist bypass in BasicPolymorphicTypeValidator (allowIfSubTypeIsArray)",
+        "aliases": [
+          "CVE-2026-54513"
+        ]
+      },
+      {
+        "id": "GHSA-3pjw-73gf-8qr5",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "jackson-databind: @JsonIgnore on a Record property is bypassed with a PropertyNamingStrategy",
+        "aliases": [
+          "CVE-2026-59888"
+        ]
+      },
+      {
+        "id": "GHSA-5jmj-h7xm-6q6v",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "jackson-databind has case-insensitive deserialization bypasses per-property @JsonIgnoreProperties",
+        "aliases": [
+          "CVE-2026-54515"
+        ]
+      },
+      {
+        "id": "GHSA-hgj6-7826-r7m5",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "jackson-databind: InetSocketAddress deserialization triggers eager DNS resolution (SSRF)",
+        "aliases": [
+          "CVE-2026-54514"
+        ]
+      }
+    ],
+    "Maven:org.apache.logging.log4j:log4j-api@2.23.1": [
+      {
+        "id": "GHSA-qv9r-c865-cp47",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "Apache Log4j API: Improper encoding of non-finite floating-point values during MapMessage JSON serialization",
+        "aliases": [
+          "CVE-2026-49844"
+        ]
+      }
+    ],
+    "Maven:ch.qos.logback:logback-core@1.5.7": [
+      {
+        "id": "GHSA-6v67-2wr5-gvf4",
+        "severity": "LOW",
+        "severitySource": "database_specific",
+        "summary": "QOS.CH logback-core Server-Side Request Forgery vulnerability",
+        "aliases": [
+          "CVE-2024-12801"
+        ]
+      },
+      {
+        "id": "GHSA-jhq6-gfmj-v8fx",
+        "severity": "LOW",
+        "severitySource": "database_specific",
+        "summary": "Logback vulnerable to Object Injection through HardenedObjectInputStream modules",
+        "aliases": [
+          "CVE-2026-10532"
+        ]
+      },
+      {
+        "id": "GHSA-p47f-322f-whfh",
+        "severity": "LOW",
+        "severitySource": "database_specific",
+        "summary": "QOS.CH Sarl logback logback-core has a deserialization of untrusted data vulnerability",
+        "aliases": [
+          "CVE-2026-9828"
+        ]
+      },
+      {
+        "id": "GHSA-qqpg-mvqg-649v",
+        "severity": "LOW",
+        "severitySource": "database_specific",
+        "summary": "Logback allows an attacker to instantiate classes already present on the class path",
+        "aliases": [
+          "CVE-2026-1225"
+        ]
+      },
+      {
+        "id": "GHSA-25qh-j22f-pwp8",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "QOS.CH logback-core is vulnerable to Arbitrary Code Execution through file processing",
+        "aliases": [
+          "CVE-2025-11226"
+        ]
+      },
+      {
+        "id": "GHSA-pr98-23f8-jwxv",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "QOS.CH logback-core Expression Language Injection vulnerability",
+        "aliases": [
+          "CVE-2024-12798"
+        ]
+      }
+    ],
+    "Maven:org.springframework.boot:spring-boot@3.3.3": [
+      {
+        "id": "GHSA-rc42-6c7j-7h5r",
+        "severity": "HIGH",
+        "severitySource": "database_specific",
+        "summary": "Spring Boot EndpointRequest.to() creates wrong matcher if actuator endpoint is not exposed",
+        "aliases": [
+          "CVE-2025-22235"
+        ]
+      },
+      {
+        "id": "GHSA-wwpq-f5c3-7hvx",
+        "severity": "HIGH",
+        "severitySource": "database_specific",
+        "summary": "Spring Boot accepts predictable temp directory without ownership verification",
+        "aliases": [
+          "CVE-2026-40973"
+        ]
+      }
+    ],
+    "Maven:org.springframework.boot:spring-boot-autoconfigure@3.3.3": [
+      {
+        "id": "GHSA-ggg2-9786-hwc8",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "Spring Boot: Predictable Temp Directory in Artemis Auto-configuration",
+        "aliases": [
+          "CVE-2026-41001"
+        ]
+      }
+    ],
+    "Maven:org.springframework:spring-context@6.1.12": [
+      {
+        "id": "GHSA-4wp7-92pw-q264",
+        "severity": "LOW",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework DataBinder Case Sensitive Match Exception",
+        "aliases": [
+          "CVE-2025-22233"
+        ]
+      },
+      {
+        "id": "GHSA-4gc7-5j7h-4qph",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework DataBinder Case Sensitive Match Exception",
+        "aliases": [
+          "CVE-2024-38820"
+        ]
+      }
+    ],
+    "Maven:org.springframework:spring-core@6.1.12": [
+      {
+        "id": "GHSA-jmp9-x22r-554x",
+        "severity": "HIGH",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework annotation detection mechanism may result in improper authorization",
+        "aliases": [
+          "CVE-2025-41249"
+        ]
+      },
+      {
+        "id": "GHSA-659m-px2c-25wj",
+        "severity": "LOW",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework Denial of Service via AntPathMatcher",
+        "aliases": [
+          "CVE-2026-41848"
+        ]
+      }
+    ],
+    "Maven:org.springframework:spring-expression@6.1.12": [
+      {
+        "id": "GHSA-r5w3-xv2f-j59q",
+        "severity": "HIGH",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework Algorithmic Denial of Service via SpEL Expressions",
+        "aliases": [
+          "CVE-2026-41850"
+        ]
+      },
+      {
+        "id": "GHSA-9f52-rjqv-25qv",
+        "severity": "LOW",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework Arbitrary Method Invocation in SpEL Expressions",
+        "aliases": [
+          "CVE-2026-41852"
+        ]
+      },
+      {
+        "id": "GHSA-wxpp-56q6-5pcg",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework Denial of Service via Unbounded Cache in SpEL",
+        "aliases": [
+          "CVE-2026-41851"
+        ]
+      }
+    ],
+    "Maven:org.springframework:spring-web@6.1.12": [
+      {
+        "id": "GHSA-4gc7-5j7h-4qph",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework DataBinder Case Sensitive Match Exception",
+        "aliases": [
+          "CVE-2024-38820"
+        ]
+      },
+      {
+        "id": "GHSA-6r3c-xf4w-jxjm",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework vulnerable to a reflected file download (RFD)",
+        "aliases": [
+          "CVE-2025-41234"
+        ]
+      }
+    ],
+    "Maven:org.springframework:spring-webmvc@6.1.12": [
+      {
+        "id": "GHSA-3chg-m5w7-qfv5",
+        "severity": "HIGH",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework Cross-site Scripting via JavaScriptUtils",
+        "aliases": [
+          "CVE-2026-41845"
+        ]
+      },
+      {
+        "id": "GHSA-cx7f-g6mp-7hqm",
+        "severity": "HIGH",
+        "severitySource": "database_specific",
+        "summary": "Path traversal vulnerability in functional web frameworks",
+        "aliases": [
+          "CVE-2024-38816"
+        ]
+      },
+      {
+        "id": "GHSA-g5vr-rgqm-vf78",
+        "severity": "HIGH",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework Path Traversal vulnerability",
+        "aliases": [
+          "CVE-2024-38819"
+        ]
+      },
+      {
+        "id": "GHSA-x23c-287f-qqv5",
+        "severity": "HIGH",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework Denial of Service via Versioned Resources in Spring MVC and WebFlux",
+        "aliases": [
+          "CVE-2026-41842"
+        ]
+      },
+      {
+        "id": "GHSA-6hcq-hmm3-jj3c",
+        "severity": "LOW",
+        "severitySource": "database_specific",
+        "summary": "Spring MVC and WebFlux has Server Sent Event stream corruption",
+        "aliases": [
+          "CVE-2026-22735"
+        ]
+      },
+      {
+        "id": "GHSA-wg35-8jpf-2xv3",
+        "severity": "LOW",
+        "severitySource": "database_specific",
+        "summary": "Spring MVC and WebFlux applications are vulnerable to cache poisoning when resolving static resources.",
+        "aliases": [
+          "CVE-2026-22741"
+        ]
+      },
+      {
+        "id": "GHSA-4773-3jfm-qmx3",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework Improper Path Limitation with Script View Templates",
+        "aliases": [
+          "CVE-2026-22737"
+        ]
+      },
+      {
+        "id": "GHSA-6p4f-wcwh-5vvm",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "Spring MVC and WebFlux applications are vulnerable to Denial of Service attacks when resolving static resources",
+        "aliases": [
+          "CVE-2026-22745"
+        ]
+      },
+      {
+        "id": "GHSA-72pg-x5f8-j25j",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework Path Traversal via Versioned Static Resources in Spring MVC and WebFlux",
+        "aliases": [
+          "CVE-2026-41843"
+        ]
+      },
+      {
+        "id": "GHSA-957g-f97v-vppc",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework Cross-site Scripting via JSP Form Tags",
+        "aliases": [
+          "CVE-2026-41846"
+        ]
+      },
+      {
+        "id": "GHSA-cjpg-rgq5-fr37",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework Multipart Request Smuggling in Spring MVC and WebFlux",
+        "aliases": [
+          "CVE-2026-41853"
+        ]
+      },
+      {
+        "id": "GHSA-h3qp-gqrc-q736",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework Open Redirect in Spring MVC and WebFlux",
+        "aliases": [
+          "CVE-2026-41844"
+        ]
+      },
+      {
+        "id": "GHSA-mq64-j8f9-9gcj",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework Information Disclosure via Static Resource Cache in Spring MVC and WebFlux",
+        "aliases": [
+          "CVE-2026-41841"
+        ]
+      },
+      {
+        "id": "GHSA-r936-gwx5-v52f",
+        "severity": "MEDIUM",
+        "severitySource": "database_specific",
+        "summary": "Spring Framework MVC Applications Path Traversal Vulnerability",
+        "aliases": [
+          "CVE-2025-41242"
+        ]
+      }
+    ]
+  }
+}

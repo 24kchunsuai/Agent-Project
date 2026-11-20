@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  agt_backend 日志配置（企业级落地规约 E-6，判据 C3）
+  字段契约与理由见 docs/日志规范.md ；改这里的字段名要同步改
+  Python 侧 app/core/logging_setup.py 与 Java 侧 JsonLogLayout.java。
+
+  两条轨道（规范 §4）：
+    CONSOLE    人读；被计划任务重定向进 deploy/logs/8080-agt_backend.log
+                （进程在 Spring 起来之前就死掉时，那是唯一线索）
+    JSON_FILE  结构化 JSON lines；应用自己轮转，是**查询口径**
+                deploy/logs/8080-agt_backend.jsonl (+ .1 … .10)
+
+  为什么日志目录要用环境变量：
+    8080 的启动包装脚本（deploy/start-backend.cmd）会把工作目录切到
+    agt_backend/target，相对路径 "deploy/logs" 会解析成
+    agt_backend/target/deploy/logs（不存在，且没人会去那儿找日志）。
+    所以由启动脚本注入绝对路径 AGT_LOG_DIR；直接跑 IDE 时退回
+    ${user.dir}/../deploy/logs（user.dir 是 agt_backend/）。
+-->
+<configuration>
+
+    <property name="LOG_DIR" value="${AGT_LOG_DIR:-${user.dir}/../deploy/logs}"/>
+    <property name="SERVICE_NAME" value="agt_backend"/>
+    <!-- 与 Python 侧 LOG_MAX_BYTES / LOG_BACKUP_COUNT 对齐（规范 §5：50MB × 10 份） -->
+    <property name="MAX_FILE_SIZE" value="50MB"/>
+    <property name="MAX_INDEX" value="10"/>
+
+    <!-- ============ 轨道一：控制台（人读） ============ -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- [%X{traceId}] 只有处于请求上下文里才有值；启动期日志显示为 []，属正常 -->
+            <pattern>%d{HH:mm:ss.SSS} | %-5level | %logger{36} | [%X{traceId}] %msg%n</pattern>
+            <!-- 必须显式 UTF-8：Windows 中文环境默认 GBK，中文会写成一堆问号 -->
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- ============ 轨道二：结构化 JSON lines（机器读） ============ -->
+    <appender name="JSON_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/8080-${SERVICE_NAME}.jsonl</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <!-- 产物命名 8080-agt_backend.jsonl.1（最新） … .10（最旧），
+                 与 Python 的 RotatingFileHandler 完全一致：
+                 运维只需要记一套规则，ls deploy/logs/8080-agt_backend.jsonl* 就能看全 -->
+            <fileNamePattern>${LOG_DIR}/8080-${SERVICE_NAME}.jsonl.%i</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>${MAX_INDEX}</maxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
+        </triggeringPolicy>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <charset>UTF-8</charset>
+            <layout class="cn.tedu.agt.base.log.JsonLogLayout">
+                <!-- service 字段的唯一来源（规范 §2.1：两侧各一个固定值） -->
+                <service>agt_backend</service>
+            </layout>
+        </encoder>
+    </appender>
+
+    <!--
+      级别：root 保持 WARN（与改造前 application.properties 一致，避免第三方库刷屏），
+      本项目的 logger 明确开到 DEBUG —— 结构化日志的价值在于"排障时够细"，
+      而 INFO 级会把 LLM/检索的中间数字丢掉。
+      application.properties 里的 logging.level.* 依然生效（Spring Boot 在
+      logback 初始化后应用），两边不一致时以 properties 为准。
+    -->
+    <logger name="cn.tedu.agt" level="DEBUG"/>
+
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="JSON_FILE"/>
+    </root>
+</configuration>

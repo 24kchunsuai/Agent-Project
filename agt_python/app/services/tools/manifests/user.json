@@ -1,0 +1,168 @@
+{
+  "domain": "user",
+  "tools": [
+    {
+      "name": "user_query",
+      "description": "查询用户列表（飞手/维修员/管理员账号），可按用户名/状态/角色过滤。回答'有哪些飞手''谁被禁用了''系统里有哪些账号'等",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "用户名关键字，可选"
+          },
+          "status": {
+            "type": "string",
+            "description": "状态过滤，可选，1=启用 0=禁用"
+          },
+          "permission": {
+            "type": "string",
+            "description": "角色过滤，可选（admin/pilot/maintainer，不确定就不过滤）"
+          },
+          "pageNum": {
+            "type": "integer",
+            "description": "页码，可选（默认返回全部）"
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "每页条数，可选，上限 100"
+          }
+        },
+        "required": []
+      },
+      "danger": false
+    },
+    {
+      "name": "user_detail",
+      "description": "查询用户详情（返回含 id，后续改用户信息需要）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "description": "用户 ID，必填"
+          }
+        },
+        "required": [
+          "userId"
+        ]
+      },
+      "danger": false
+    },
+    {
+      "name": "permission_matrix",
+      "description": "查询角色权限矩阵：admin/pilot/maintainer 各角色能做什么。回答'管理员能做什么''飞手和维修员的权限区别'等（需 admin）",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "danger": false
+    },
+    {
+      "name": "user_save",
+      "description": "新建或编辑用户账号（不传 id 为新建）。可设置角色（admin/pilot/maintainer）、状态、联系方式等；permission 变更会改变账号权限",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "用户名，必填"
+          },
+          "id": {
+            "type": "integer",
+            "description": "用户 ID（更新时必传，新建不传）"
+          },
+          "email": {
+            "type": "string",
+            "description": "邮箱，可选"
+          },
+          "phone": {
+            "type": "string",
+            "description": "手机号，可选"
+          },
+          "age": {
+            "type": "integer",
+            "description": "年龄，可选"
+          },
+          "gender": {
+            "type": "string",
+            "description": "性别，可选"
+          },
+          "status": {
+            "type": "string",
+            "description": "状态，可选，1=启用 0=禁用"
+          },
+          "permission": {
+            "type": "string",
+            "description": "角色，可选（admin/pilot/maintainer）"
+          }
+        },
+        "required": [
+          "username"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "user_delete",
+      "description": "删除用户账号（不可恢复；若该用户有关联任务/告警会被系统拒绝）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "description": "用户 ID，必填"
+          }
+        },
+        "required": [
+          "userId"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "user_status_update",
+      "description": "启用或禁用用户账号",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "description": "用户 ID，必填"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "1",
+              "0"
+            ],
+            "description": "目标状态：1=启用，0=禁用"
+          }
+        },
+        "required": [
+          "userId",
+          "status"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "user_password_reset",
+      "description": "重置用户密码（高危操作，重置后原密码失效，不可恢复）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "description": "用户 ID，必填"
+          }
+        },
+        "required": [
+          "userId"
+        ]
+      },
+      "danger": true
+    }
+  ]
+}

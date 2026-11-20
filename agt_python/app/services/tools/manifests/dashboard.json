@@ -1,0 +1,15 @@
+{
+  "domain": "dashboard",
+  "tools": [
+    {
+      "name": "dashboard_query",
+      "description": "查询运营总览仪表盘：用户/设备/任务/围栏/媒体总数，设备状态分布，任务状态与优先级分布，累计架次与飞行时长。回答'现在整体情况''有多少设备/任务/围栏''设备状态分布'等全局统计问题",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "danger": false
+    }
+  ]
+}

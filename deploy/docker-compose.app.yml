@@ -1,0 +1,91 @@
+# ============================================================
+# drone-agent001 应用编排（E-14 容器化交付，判据 C1 形态二）
+#
+# 与 deploy/milvus/docker-compose.yml 的关系：
+#   Milvus（含 etcd/minio）是**独立栈**，有自己的 compose 与数据卷。
+#   本文件**不复制它**，而是通过 external 网络 `milvus-net` 接入——
+#   所以启动顺序是：先 deploy/milvus（docker-compose up -d），再本文件。
+#   未起 Milvus 时本编排照样能起（RAG 链路降级，有 fault_event 有账）。
+#
+# 启动：docker-compose -f deploy/docker-compose.app.yml up -d --build
+# 停止：docker-compose -f deploy/docker-compose.app.yml down（数据保留）
+#
+# 端口暴露策略（S-1 意图的容器等价物）：
+#   agt-web    9090:80     浏览器唯一入口（页面 + /v1 反代）
+#   agt-backend 8080:8080  运维/调试直连（形态一同口径）
+#   agt-python 无           容器网络内可见，宿主机/浏览器摸不到
+#
+# 密钥与配置不进镜像：三个服务共用 ../agt_python/.env（env_file），
+#   敏感项（AGENT_SHARED_KEY / LLM_API_KEY）只存在于宿主机文件与容器环境。
+# ============================================================
+services:
+  agt-python:
+    build:
+      context: ..
+      dockerfile: agt_python/Dockerfile
+    image: agt-python:${APP_VERSION:-latest}
+    container_name: agt-python
+    # 密钥/LLM/埋点等配置统一来自宿主机 .env；environment 覆盖容器特有项
+    env_file:
+      - ../agt_python/.env
+    environment:
+      # 数据落盘外置到命名卷（容器重建数据不丢）
+      DATA_ROOT: /app/data
+      # Milvus 经共享网络用容器名寻址（本机 .env 里是 localhost:19530）
+      MILVUS_URI: http://milvus-standalone:19530
+    volumes:
+      - agt-data:/app/data
+    networks:
+      - default
+      - milvus-net
+    restart: unless-stopped
+    mem_limit: 1g
+
+  agt-backend:
+    build:
+      context: ..
+      dockerfile: agt_backend/Dockerfile
+    image: agt-backend:${APP_VERSION:-latest}
+    container_name: agt-backend
+    # AGENT_SHARED_KEY 经 env_file 进容器环境，
+    # application.properties 的 ${AGENT_SHARED_KEY:} 占位符读取它
+    env_file:
+      - ../agt_python/.env
+    ports:
+      - "${BACKEND_PORT:-8080}:8080"
+    depends_on:
+      agt-python:
+        condition: service_healthy
+    networks:
+      - default
+    restart: unless-stopped
+    mem_limit: 768m
+
+  agt-web:
+    build:
+      context: ..
+      dockerfile: agt_web/Dockerfile
+    image: agt-web:${APP_VERSION:-latest}
+    container_name: agt-web
+    ports:
+      - "${WEB_PORT:-9090}:80"
+    depends_on:
+      agt-backend:
+        condition: service_healthy
+    networks:
+      - default
+    restart: unless-stopped
+    mem_limit: 128m
+
+volumes:
+  # 应用数据（observability.db / 会话记忆 / 知识库账本…）
+  # 注意：与形态一（Windows 原生）的 agt_python/data **互不相通**——
+  # 两种形态是两套独立部署，数据不共享也不应共享。
+  agt-data:
+
+networks:
+  # deploy/milvus/docker-compose.yml 创建的共享网络（external）
+  milvus-net:
+    external: true
+    name: milvus-net
+  default: {}

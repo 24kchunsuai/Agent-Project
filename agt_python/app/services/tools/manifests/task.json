@@ -1,0 +1,184 @@
+{
+  "domain": "task",
+  "tools": [
+    {
+      "name": "task_query",
+      "description": "查询飞行任务列表（返回含 id/taskName/status/priority，后续下发/审核/删除任务需要这里的 id），可按状态过滤",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "任务状态过滤，可选，不确定就不过滤"
+          },
+          "taskName": {
+            "type": "string",
+            "description": "任务名称关键字，可选"
+          },
+          "priority": {
+            "type": "string",
+            "description": "优先级过滤，可选（高/中/低）"
+          },
+          "pageNum": {
+            "type": "integer",
+            "description": "页码，可选（默认返回全部）"
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "每页条数，可选，上限 100"
+          }
+        },
+        "required": []
+      },
+      "danger": false
+    },
+    {
+      "name": "task_create",
+      "description": "创建飞行任务（草稿）。需要任务名称，可选优先级/飞手/航线/描述。创建后默认不下发",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "taskName": {
+            "type": "string",
+            "description": "任务名称，必填"
+          },
+          "priority": {
+            "type": "string",
+            "description": "优先级，可选（高/中/低）"
+          },
+          "pilotName": {
+            "type": "string",
+            "description": "飞手姓名，可选"
+          },
+          "routeInfo": {
+            "type": "string",
+            "description": "航线说明，可选"
+          },
+          "description": {
+            "type": "string",
+            "description": "任务描述，可选"
+          }
+        },
+        "required": [
+          "taskName"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "task_assign",
+      "description": "下发/派发任务（会占用设备与飞手）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "taskId": {
+            "type": "integer",
+            "description": "任务 ID，必填"
+          }
+        },
+        "required": [
+          "taskId"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "task_accept",
+      "description": "接单：接受派给自己的飞行任务（需要飞手身份，admin 可代操作；服务端按角色校验）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "taskId": {
+            "type": "integer",
+            "description": "任务 ID，必填"
+          }
+        },
+        "required": [
+          "taskId"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "task_reject",
+      "description": "拒单：拒绝接下飞行任务并说明原因（需要飞手身份，admin 可代操作）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "taskId": {
+            "type": "integer",
+            "description": "任务 ID，必填"
+          },
+          "reason": {
+            "type": "string",
+            "description": "拒单原因，建议填写"
+          }
+        },
+        "required": [
+          "taskId"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "task_delete",
+      "description": "删除任务（不可恢复）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "taskId": {
+            "type": "integer",
+            "description": "任务 ID，必填"
+          }
+        },
+        "required": [
+          "taskId"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "task_audit",
+      "description": "审核任务：通过或驳回",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "taskId": {
+            "type": "integer",
+            "description": "任务 ID，必填"
+          },
+          "result": {
+            "type": "string",
+            "description": "审核结果：通过 / 驳回"
+          },
+          "comment": {
+            "type": "string",
+            "description": "审核意见，可选"
+          }
+        },
+        "required": [
+          "taskId",
+          "result"
+        ]
+      },
+      "danger": true
+    },
+    {
+      "name": "task_complete",
+      "description": "完成任务：将飞行任务标记为已完成（需要飞手身份，admin 可代操作）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "taskId": {
+            "type": "integer",
+            "description": "任务 ID，必填"
+          }
+        },
+        "required": [
+          "taskId"
+        ]
+      },
+      "danger": true
+    }
+  ]
+}

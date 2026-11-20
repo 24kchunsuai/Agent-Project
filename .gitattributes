@@ -1,0 +1,15 @@
+# 统一行尾处理：文本文件交由 git 自动判定
+* text=auto
+
+# Windows 批处理脚本必须保持 CRLF，否则无法执行
+*.cmd text eol=crlf
+*.bat text eol=crlf
+mvnw text eol=lf
+
+# 二进制文件不做行尾转换
+*.png binary
+*.jpg binary
+*.ico binary
+*.jar binary
+*.woff binary
+*.woff2 binary
